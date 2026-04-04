@@ -1,0 +1,77 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: var(--bg-light);
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+.project-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.project-hook {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.project-card p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tech-tags span {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}

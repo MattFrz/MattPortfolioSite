@@ -1,0 +1,48 @@
+.job {
+  border-left: 2px solid var(--accent);
+  padding-left: 25px;
+  margin-bottom: 40px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.job-header h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.date {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.company {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin: 5px 0 15px;
+}
+
+.job ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.job li {
+  color: 
+  var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.job-summary {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-top: 8px;
+}

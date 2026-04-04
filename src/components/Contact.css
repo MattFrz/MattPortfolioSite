@@ -1,0 +1,31 @@
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-links a,
+.contact-links p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+}
+
+.footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.footer p {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
