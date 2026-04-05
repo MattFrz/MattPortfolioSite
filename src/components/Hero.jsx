@@ -16,7 +16,7 @@ const Hero = () => {
       <p className="location">Toronto, ON</p>
       <div className="hero-links">
         <a href="https://github.com/MattFrz" target="_blank"><FaGithub /> GitHub</a>
-        <a href="#" target="_blank"><FaLinkedin /> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/matt-farzaneh-36153727a/" target="_blank"><FaLinkedin /> LinkedIn</a>
         <a href="#projects" className="cta">View Projects ↓</a>
       </div>
     </motion.section>
