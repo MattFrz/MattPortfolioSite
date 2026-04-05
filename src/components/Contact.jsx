@@ -16,7 +16,7 @@ const Contact = () => {
         <a href="mailto:mattfarzaneh21@gmail.com"><FaEnvelope /> mattfarzaneh21@gmail.com</a>
         <p><FaMapMarkerAlt /> Toronto, ON</p>
         <a href="https://github.com/MattFrz" target="_blank"><FaGithub /> GitHub</a>
-        <a href="#" target="_blank"><FaLinkedin /> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/matt-farzaneh-36153727a/" target="_blank"><FaLinkedin /> LinkedIn</a>
       </div>
       <footer className="footer">
         <p>© 2026 Matt Farzaneh. Built with React & Vite.</p>
