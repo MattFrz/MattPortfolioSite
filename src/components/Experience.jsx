@@ -10,6 +10,26 @@ const Experience = () => {
         className="job"
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="job-header">
+          <h3>Technology Analyst, Strategic Initiatives</h3>
+          <span className="date">May 2026 - Dec 2026</span>
+        </div>
+        <p className="company">University Pension Plan Ontario · Toronto, ON</p>
+        <ul>
+          <li>Designed and developed an end-to-end data automation platform for the Public Markets Quant team using Python, SQL, and Streamlit, eliminating hours of manual data preparation each reporting cycle.</li>
+          <li>Engineered an ETL pipeline that integrated data from Bloomberg, Albourne, the internal DataHub, and Google Cloud Platform (GCP), performed CAD foreign exchange (FX) normalization, generated standardized Excel reports, and synchronized transformed datasets back to GCP.</li>
+          <li>Built and deployed an interactive Streamlit application that automated data validation, transformation, and reporting, enabling analysts to generate analysis-ready datasets through a simple web interface.</li>
+          <li>Partnered with portfolio managers, quantitative researchers, and business stakeholders to gather requirements, translate investment workflows into scalable software solutions, and deliver production-ready automation tools.</li>
+        </ul>
+      </motion.div>
+      
+      <motion.div
+        className="job"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
@@ -44,26 +64,6 @@ const Experience = () => {
           <li>Engineered scalable data integration workflows to process 500+ financial workbook integrations monthly, improving data reliability and reducing client reporting workload by 40+ hours per week.</li>
           <li>Translated business requirements into technical solutions, collaborating with clients and stakeholders to design, implement, and deliver automation tools aligned with operational needs.</li>
           <li>Managed iterative software delivery using Agile methodologies and Jira, coordinating development priorities, testing, and deployments to meet project deadlines.</li>
-        </ul>
-      </motion.div>
-
-      <motion.div
-        className="job"
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <div className="job-header">
-          <h3>Technology Analyst, Strategic Initiatives</h3>
-          <span className="date">May 2026 - Dec 2026</span>
-        </div>
-        <p className="company">University Pension Plan Ontario · Toronto, ON</p>
-        <ul>
-          <li>Designed and developed an end-to-end data automation platform for the Public Markets Quant team using Python, SQL, and Streamlit, eliminating hours of manual data preparation each reporting cycle.</li>
-          <li>Engineered an ETL pipeline that integrated data from Bloomberg, Albourne, the internal DataHub, and Google Cloud Platform (GCP), performed CAD foreign exchange (FX) normalization, generated standardized Excel reports, and synchronized transformed datasets back to GCP.</li>
-          <li>Built and deployed an interactive Streamlit application that automated data validation, transformation, and reporting, enabling analysts to generate analysis-ready datasets through a simple web interface.</li>
-          <li>Partnered with portfolio managers, quantitative researchers, and business stakeholders to gather requirements, translate investment workflows into scalable software solutions, and deliver production-ready automation tools.</li>
         </ul>
       </motion.div>
     </section>
