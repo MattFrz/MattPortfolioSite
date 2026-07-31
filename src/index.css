@@ -5,22 +5,73 @@
 }
 
 :root {
-  --bg: #0b0b0f;
-  --bg-light: #12121a;
-  --text: #e4e4e7;
-  --text-dim: #9393a1;
-  --accent: #7c3aed;
-  --accent-glow: rgba(124, 58, 237, 0.3);
-  --font: 'Inter', sans-serif;
+  /* surfaces */
+  --bg: #05070d;
+  --bg-elev: #0a0d16;
+  --bg-light: #0d111c;
+  --surface: rgba(255, 255, 255, 0.025);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+
+  /* type */
+  --text: #e8ecf4;
+  --text-dim: #8d97ad;
+  --text-faint: #5d667c;
+
+  /* accents */
+  --accent: #22d3ee;
+  --accent-2: #7c3aed;
+  --accent-3: #34d399;
+  --accent-glow: rgba(34, 211, 238, 0.22);
+  --grad: linear-gradient(120deg, #22d3ee 0%, #6366f1 55%, #a855f7 100%);
+
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --radius: 16px;
+  --max: 1120px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: var(--bg);
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
-  background-size: 40px 40px;
   color: var(--text);
   font-family: var(--font);
-  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ambient backdrop: fine grid + two soft light sources */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 55% at 50% 0%, #000 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 55% at 50% 0%, #000 20%, transparent 78%);
+}
+
+body::after {
+  background:
+    radial-gradient(600px 420px at 12% -8%, rgba(34, 211, 238, 0.13), transparent 70%),
+    radial-gradient(700px 480px at 90% 4%, rgba(124, 58, 237, 0.15), transparent 70%);
 }
 
 a {
@@ -28,14 +79,96 @@ a {
   text-decoration: none;
 }
 
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #fff;
+}
+
+/* ---------- section shell ---------- */
+
 section {
-  max-width: 900px;
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 104px 28px;
+  position: relative;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.section-head {
+  margin-bottom: 52px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.section-rule {
+  height: 1px;
+  margin-top: 22px;
+  background: linear-gradient(90deg, var(--line-strong), transparent 55%);
+}
+
+/* shared surface card */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* shared chip */
+.chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 13px;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 76px 20px;
+  }
+  .section-head {
+    margin-bottom: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

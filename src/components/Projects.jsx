@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaGithub } from 'react-icons/fa'
+import { FiArrowUpRight } from 'react-icons/fi'
 import './Projects.css'
 
 const projects = [
@@ -32,28 +33,49 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects">
-      <h2>Projects</h2>
+      <div className="section-head">
+        <span className="eyebrow">03 / Projects</span>
+        <h2>Projects</h2>
+        <div className="section-rule" />
+      </div>
+
       <div className="projects-grid">
         {projects.map((project, i) => (
-          <motion.div
+          <motion.a
             className="project-card"
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
+            key={project.title}
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <span className="project-emoji">{project.emoji}</span>
+            <div className="card-glow" aria-hidden="true" />
+
+            <div className="card-top">
+              <span className="project-emoji">{project.emoji}</span>
+              <span className="project-index">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+
             <h3>{project.title}</h3>
             <p className="project-hook">{project.hook}</p>
-            <p>{project.description}</p>
+            <p className="project-desc">{project.description}</p>
+
             <div className="tech-tags">
-              {project.tech.map((t, j) => <span key={j}>{t}</span>)}
+              {project.tech.map((t) => (
+                <span className="chip" key={t}>{t}</span>
+              ))}
             </div>
+
             <div className="project-links">
-              <a href={project.github} target="_blank"><FaGithub /> View Code</a>
+              <span className="project-link">
+                <FaGithub /> View Code
+              </span>
+              <FiArrowUpRight className="arrow" />
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </section>
