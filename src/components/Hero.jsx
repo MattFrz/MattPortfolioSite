@@ -26,7 +26,7 @@ const Hero = () => {
           <motion.h1 variants={item}>Matt Farzaneh</motion.h1>
 
           <motion.p className="subtitle" variants={item}>
-            CS Student &amp; Full-Stack Developer
+            Software Engineer | FinTech & Quantitative Systems
           </motion.p>
 
           <motion.div className="hero-links" variants={item}>
