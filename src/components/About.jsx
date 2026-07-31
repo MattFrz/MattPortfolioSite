@@ -13,20 +13,13 @@ const About = () => {
       <h2>About Me</h2>
       <div className="about-content">
         <p>
-          I'm a CS student at Western University who got hooked on programming 
-          the first time I automated something that used to take hours. That 
-          feeling of "wait, I can just build that?" hasn't gone away.
+          I'm a CS student at Western University, and my path into fintech started with a simple realization: the instinct that makes me automate a boring task is the same one that works on markets. Find the inefficiency, build the system, let it run.
         </p>
         <p>
-          Since then, I've co-founded a SaaS company, built AI models that 
-          predict stock prices, and automated data pipelines processing 
-          hundreds of financial spreadsheets. I care about writing clean code 
-          that actually ships and solves real problems for real people.
+          That's taken me from building a 3-layer LSTM to forecast S&P 500 price action, to writing Python pipelines that transform Bloomberg and Albourne data for a pension fund's quant team, to co-founding a SaaS platform with real production traffic. I'm most interested in where AI, data infrastructure, and financial decision-making meet. Not just building models, but building systems people can actually trust and use.
         </p>
         <p>
-          When I'm not coding, I'm probably exploring new tech, breaking 
-          something in a side project, or figuring out how things work 
-          under the hood.
+          Outside of that, I'm usually reading ML research, tinkering with a side project, or figuring out how something works well enough to rebuild it myself.
         </p>
       </div>
     </motion.section>
