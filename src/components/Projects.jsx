@@ -28,6 +28,14 @@ const projects = [
     tech: ['C++', 'Qt 6', 'SQLite', 'CMake'],
     github: 'https://github.com/MattFrz',
   },
+  {
+    title: 'ITCH-Engine',
+    emoji: '📊',
+    hook: 'Everyone backtests like fills are instant and perfect. I proved that assumption is a lie.',
+    description: 'Custom C++ order book engine that reconstructs a live Nasdaq exchange from 14.5M+ real ITCH messages, verified error-free against an independent reference implementation. Used it to show that a realistic backtest - real queue position, real latency - flips a "profitable" strategy into a loss.',
+    tech: ['C++', 'Python', 'pybind11', 'Streamlit'],
+    github: 'https://github.com/MattFrz/ITCH-Engine',
+  },
 ]
 
 const Projects = () => {
