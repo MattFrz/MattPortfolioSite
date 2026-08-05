@@ -5,19 +5,19 @@ import './Projects.css'
 
 const projects = [
   {
+    title: 'ITCH-Engine',
+    emoji: '📊',
+    hook: 'Everyone backtests like fills are instant and perfect. I proved that assumption is a lie.',
+    description: 'Custom C++ order book engine that reconstructs a live Nasdaq exchange from 14.5M+ real ITCH messages, verified error-free against an independent reference implementation. Used it to show that a realistic backtest - real queue position, real latency - flips a "profitable" strategy into a loss.',
+    tech: ['C++', 'Python', 'pybind11', 'Streamlit'],
+    github: 'https://github.com/MattFrz/ITCH-Engine',
+  },
+  {
     title: 'Stock Prediction AI',
     emoji: '📈',
     hook: 'Can a neural network beat basic market indicators? I had to find out.',
     description: 'Trained a 3-layer LSTM on 60 days of S&P 500 data. Turns out - it actually works. Competitive RMSE and R² scores against real market benchmarks.',
     tech: ['Python', 'TensorFlow', 'Pandas', 'NumPy'],
-    github: 'https://github.com/MattFrz',
-  },
-  {
-    title: 'Smart Crypto Wallet',
-    emoji: '💰',
-    hook: 'I wanted to understand how blockchain transactions actually work - so I built one.',
-    description: 'Full-stack wallet on Stellar. React frontend, Node.js backend, real transaction flow. Handled 2,000+ simulated transfers without a single failure.',
-    tech: ['React', 'Node.js', 'Java', 'JavaScript'],
     github: 'https://github.com/MattFrz',
   },
   {
@@ -29,12 +29,12 @@ const projects = [
     github: 'https://github.com/MattFrz',
   },
   {
-    title: 'ITCH-Engine',
-    emoji: '📊',
-    hook: 'Everyone backtests like fills are instant and perfect. I proved that assumption is a lie.',
-    description: 'Custom C++ order book engine that reconstructs a live Nasdaq exchange from 14.5M+ real ITCH messages, verified error-free against an independent reference implementation. Used it to show that a realistic backtest - real queue position, real latency - flips a "profitable" strategy into a loss.',
-    tech: ['C++', 'Python', 'pybind11', 'Streamlit'],
-    github: 'https://github.com/MattFrz/ITCH-Engine',
+    title: 'Smart Crypto Wallet',
+    emoji: '💰',
+    hook: 'I wanted to understand how blockchain transactions actually work - so I built one.',
+    description: 'Full-stack wallet on Stellar. React frontend, Node.js backend, real transaction flow. Handled 2,000+ simulated transfers without a single failure.',
+    tech: ['React', 'Node.js', 'Java', 'JavaScript'],
+    github: 'https://github.com/MattFrz',
   },
 ]
 
