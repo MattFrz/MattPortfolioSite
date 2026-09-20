@@ -1,114 +1,42 @@
-import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { FiArrowDown } from 'react-icons/fi'
+import { FiArrowDown, FiArrowUpRight, FiDownload } from 'react-icons/fi'
 import './Hero.css'
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
-}
+const metrics = [
+  { value: '1.23', unit: 'Sharpe', label: 'AI Quant Council · backtest', href: '#quant-council' },
+  { value: '0.88', unit: 'µs / event', label: 'ITCH · Python/C++ boundary', href: '#itch-engine' },
+  { value: '14.47', unit: 'M messages', label: 'ITCH · one validated day', href: '#itch-engine' },
+  { value: '95', unit: '%', label: 'Less manual Excel processing', href: '#kd-consulting' },
+]
 
-const item = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
-}
-
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="hero" id="hero">
+    <section className="hero section-shell" id="hero" aria-labelledby="hero-title" tabIndex={-1}>
+      <div className="hero-topline"><span className="eyebrow">Software engineer</span><span className="eyebrow">Toronto, ON <span className="hero-coordinate" aria-hidden="true">/</span> Western University</span></div>
       <div className="hero-grid">
-        <motion.div className="hero-copy" variants={container} initial="hidden" animate="show">
-          <motion.p className="hero-eyebrow" variants={item}>
-            <span className="ping" />
-            Toronto, ON
-          </motion.p>
-
-          <motion.h1 variants={item}>Matt Farzaneh</motion.h1>
-
-          <motion.p className="subtitle" variants={item}>
-            Software Engineer | FinTech & Quantitative Systems
-          </motion.p>
-
-          <motion.div className="hero-links" variants={item}>
-            <a href="#projects" className="btn btn-primary">
-              View Projects <FiArrowDown />
-            </a>
-            <a href="https://github.com/MattFrz" target="_blank" rel="noreferrer" className="btn">
-              <FaGithub /> GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/matt-farzaneh-36153727a/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn"
-            >
-              <FaLinkedin /> LinkedIn
-            </a>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="hero-visual"
-          aria-hidden="true"
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="visual-card">
-            <svg viewBox="0 0 320 200" preserveAspectRatio="none" className="chart">
-              <defs>
-                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#22d3ee" />
-                  <stop offset="60%" stopColor="#6366f1" />
-                  <stop offset="100%" stopColor="#a855f7" />
-                </linearGradient>
-                <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.28" />
-                  <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-
-              {[40, 80, 120, 160].map((y) => (
-                <line key={y} x1="0" y1={y} x2="320" y2={y} className="chart-grid" />
-              ))}
-
-              <path
-                className="chart-fill"
-                d="M0,150 L26,138 L52,146 L78,118 L104,128 L130,96 L156,108 L182,74 L208,86 L234,54 L260,64 L286,36 L320,26 L320,200 L0,200 Z"
-                fill="url(#fillGrad)"
-              />
-              <path
-                className="chart-line"
-                d="M0,150 L26,138 L52,146 L78,118 L104,128 L130,96 L156,108 L182,74 L208,86 L234,54 L260,64 L286,36 L320,26"
-                fill="none"
-                stroke="url(#lineGrad)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-
-            <div className="visual-bars">
-              {[38, 62, 45, 78, 55, 88, 70, 96].map((h, i) => (
-                <span key={i} style={{ '--h': `${h}%`, '--i': i }} />
-              ))}
-            </div>
+        <div className="hero-copy">
+          <h1 id="hero-title">Matt Farzaneh<span className="hero-period">.</span></h1>
+          <p className="hero-positioning">Low-latency systems.<br />Quantitative finance.</p>
+          <p className="hero-description">I build the infrastructure behind the result — from investment data pipelines to order books tested against real exchange data.</p>
+          <div className="hero-links">
+            <a href="#projects" className="button button-primary">Explore the work <FiArrowDown aria-hidden="true" /></a>
+            <a href="/resume.pdf" download="Matt-Farzaneh-Resume.pdf" className="button"><FiDownload aria-hidden="true" /> Resume <span className="download-size">160 KB</span></a>
           </div>
-          <div className="visual-glow" />
-        </motion.div>
+        </div>
+        <aside className="hero-note" aria-label="Current work">
+          <span className="eyebrow">Currently building</span>
+          <h2>Data infrastructure for investment research.</h2>
+          <p>Software Engineer Intern<br /><strong>University Pension Plan Ontario</strong></p>
+          <a href="#experience" className="text-link">Experience <FiArrowUpRight aria-hidden="true" /></a>
+          <div className="note-foot mono">Python / SQL / GCP</div>
+        </aside>
       </div>
-
-      <motion.div
-        className="scroll-cue"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        aria-hidden="true"
-      >
-        <span className="scroll-track"><span className="scroll-thumb" /></span>
-      </motion.div>
+      <div className="metric-strip" aria-label="Selected results">
+        {metrics.map((metric) => <a key={metric.value} className="lead-metric" href={metric.href}>
+          <span className="metric-value mono">{metric.value}<span className="metric-unit">{metric.unit}</span></span>
+          <span className="metric-label">{metric.label}<FiArrowUpRight aria-hidden="true" /></span>
+        </a>)}
+      </div>
+      <p className="metric-footnote">Selected measurements from projects and production work. Methods and context below.</p>
     </section>
   )
 }
-
-export default Hero

@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 
 export default function Reveal({ children, className, id }) {
   const reduced = useReducedMotion()
@@ -6,12 +6,12 @@ export default function Reveal({ children, className, id }) {
   const ease = style.getPropertyValue('--ease').match(/[\d.]+/g).map(Number)
   const duration = parseFloat(style.getPropertyValue('--duration-enter')) / 1000
   return (
-    <motion.div id={id} className={className}
+    <Motion.div id={id} className={className}
       initial={reduced ? false : { opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.08 }}
       transition={{ duration, ease }}>
       {children}
-    </motion.div>
+    </Motion.div>
   )
 }
