@@ -1,90 +1,48 @@
-import { motion } from 'framer-motion'
+import Reveal from './Reveal'
 import './Experience.css'
 
 const jobs = [
   {
-    role: 'Technology Analyst, Strategic Initiatives',
-    company: 'University Pension Plan Ontario',
-    location: 'Toronto, ON',
-    date: 'May 2026 - Dec 2026',
+    id: 'upp', start: 'May 2026', end: 'Present', role: 'Software Engineer Intern, Data Infrastructure',
+    company: 'University Pension Plan Ontario', category: 'Investment data',
     points: [
-      'Designed and developed an end-to-end data automation platform for the Public Markets Quant team using Python, SQL, and Streamlit, eliminating hours of manual data preparation each reporting cycle.',
-      'Engineered an ETL pipeline that integrated data from Bloomberg, Albourne, the internal DataHub, and Google Cloud Platform (GCP), performed CAD foreign exchange (FX) normalization, generated standardized Excel reports, and synchronized transformed datasets back to GCP.',
-      'Built and deployed an interactive Streamlit application that automated data validation, transformation, and reporting, enabling analysts to generate analysis-ready datasets through a simple web interface.',
-      'Partnered with portfolio managers, quantitative researchers, and business stakeholders to gather requirements, translate investment workflows into scalable software solutions, and deliver production-ready automation tools.',
+      'Built a Python / SQL / Streamlit ETL pipeline for the Public Markets Quant team. It pulls from GCP, Bloomberg, Albourne, and DataHub, applies CAD FX transformations, refreshes Excel reports, and writes the results back to GCP — saving hours of recurring manual work.',
+      'Deployed an upgraded Streamlit app that standardized reporting and delivered analysis-ready datasets for quantitative research and portfolio analysis.',
+      'Gathered requirements directly from portfolio managers, business stakeholders, and engineers.',
     ],
   },
   {
-    role: 'Co-Founder & Full-Stack Developer',
-    company: 'After Image Inc',
-    location: 'Toronto, ON',
-    date: 'June 2025 - Present',
+    id: 'after-image', start: 'Jun 2025', end: 'Present', role: 'Co-Founder / Developer',
+    company: 'After Image Inc', category: 'Production SaaS',
     points: [
-      'Co-founded After Image, a B2B SaaS platform that streamlines business operations through a secure, scalable web application built with Node.js, MySQL, and AWS.',
-      'Architected the full-stack platform with role-based access control (RBAC), RESTful APIs, and a multi-tenant architecture, enabling multiple organizations to securely manage their own data and workflows.',
-      'Developed an administrative dashboard featuring Stripe payment processing, automated subscriptions, invoicing, and real-time business analytics to simplify customer management.',
-      'Designed and optimized the backend infrastructure, creating efficient MySQL database schemas and high-performance APIs capable of handling thousands of monthly transactions with low latency and high reliability.',
-      'Led product development from concept to deployment, collaborating with clients to gather feedback, prioritize features, and iteratively improve the platform based on real-world business needs.',
+      'Shipped a B2B SaaS platform to production on AWS. Built the full-stack Node.js system with role-based access control separating tenant and admin permissions.',
+      'Built a multi-tenant dashboard with Stripe integration to automate billing, invoicing, and analytics.',
+      'Designed the MySQL schema and REST APIs with indexed access paths and query tuning to keep tenant-scoped endpoints responsive as data grew.',
     ],
   },
   {
-    role: 'Data Engineer & Business Analyst',
-    company: 'K&D Consulting',
-    location: 'Toronto, ON',
-    date: 'May 2024 - Sept 2025',
+    id: 'kd-consulting', start: 'May 2024', end: 'Sep 2025', role: 'Data Engineer & Business Analyst',
+    company: 'K&D Consulting', category: 'Financial automation',
     points: [
-      'Developed a Python-based automation framework using YAML-driven pipelines to streamline financial data processing workflows, reducing manual Excel processing by 95% and minimizing developer intervention by 90%+.',
-      'Engineered scalable data integration workflows to process 500+ financial workbook integrations monthly, improving data reliability and reducing client reporting workload by 40+ hours per week.',
-      'Translated business requirements into technical solutions, collaborating with clients and stakeholders to design, implement, and deliver automation tools aligned with operational needs.',
-      'Managed iterative software delivery using Agile methodologies and Jira, coordinating development priorities, testing, and deployments to meet project deadlines.',
+      'Built a Python automation framework driven by YAML pipeline configs, cutting manual Excel processing by 95% and developer intervention by 90%+.',
+      'Processed 500+ financial workbook integrations per month through the framework, saving 40+ hours of client reporting effort each week.',
+      'Coordinated delivery in Jira using Agile methods, keeping work aligned with client requirements and deadlines.',
     ],
   },
 ]
 
-const Experience = () => {
+export default function Experience() {
   return (
-    <section id="experience">
-      <div className="section-head">
-        <span className="eyebrow">02 / Experience</span>
-        <h2>Experience</h2>
-        <div className="section-rule" />
-      </div>
-
-      <div className="timeline">
-        {jobs.map((job, i) => (
-          <motion.article
-            className="job"
-            key={job.company}
-            initial={{ opacity: 0, y: 26 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, amount: 0.15 }}
-          >
-            <span className="job-node" aria-hidden="true" />
-
-            <div className="job-body">
-              <div className="job-header">
-                <h3>{job.role}</h3>
-                <span className="date">{job.date}</span>
-              </div>
-
-              <p className="company">
-                <span className="company-name">{job.company}</span>
-                <span className="dot">·</span>
-                <span className="job-location">{job.location}</span>
-              </p>
-
-              <ul>
-                {job.points.map((point, j) => (
-                  <li key={j}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          </motion.article>
-        ))}
+    <section id="experience" className="section-shell experience" aria-labelledby="experience-title" tabIndex={-1}>
+      <div className="section-heading"><p className="eyebrow"><span className="section-number">02</span>Experience</p><div><h2 id="experience-title">Systems people work with.</h2><p className="section-intro">Investment research, production software, and the reporting in between.</p></div></div>
+      <div className="experience-ledger">
+        {jobs.map(job => <Reveal key={job.id}>
+          <article className="job" id={job.id} tabIndex={-1}>
+            <div className="job-meta"><p className="job-date mono">{job.start}<span>— {job.end}</span></p><p className="job-location">Toronto, ON</p><span className="job-category">{job.category}</span></div>
+            <div className="job-body"><p className="job-company">{job.company}</p><h3>{job.role}</h3><ul>{job.points.map(point => <li key={point}>{point}</li>)}</ul></div>
+          </article>
+        </Reveal>)}
       </div>
     </section>
   )
 }
-
-export default Experience
