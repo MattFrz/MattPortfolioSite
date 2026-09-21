@@ -4,7 +4,6 @@
 .about-content { max-width: 68ch; }
 .about-illustration { margin: 28px 0 0; max-width: 352px; }
 .about-illustration img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; border: 1px solid var(--border-subtle); border-radius: var(--radius-small); }
-.about-illustration figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; color: var(--text-secondary); font: var(--text-label)/1.5 var(--font-mono); }
 .about-content > p { color: var(--text-secondary); }
 .about-content .about-lead { color: var(--text-primary); font-size: var(--text-lead); line-height: 1.65; letter-spacing: -.015em; margin-bottom: 20px; }
 .education { display: grid; grid-template-columns: 1fr auto; column-gap: 24px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle); }

@@ -9,8 +9,7 @@ export default function About() {
           <p className="eyebrow"><span className="section-number">01</span>About</p>
           <h2 id="about-title">Build it.<br />Measure it.<br />Check the assumptions.</h2>
           <figure className="about-illustration">
-            <img src="/images/toronto-editorial.webp" width="768" height="512" loading="lazy" decoding="async" alt="Architectural illustration of Toronto's skyline with the CN Tower and financial district." />
-            <figcaption><span>Toronto, ON</span><span>AI illustration</span></figcaption>
+            <img src="/images/systems-editorial.webp" width="768" height="512" loading="lazy" decoding="async" alt="Abstract computing system with ordered processing layers and connected data paths." />
           </figure>
         </div>
         <div className="about-content">
