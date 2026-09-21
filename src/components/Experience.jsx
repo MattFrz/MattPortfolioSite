@@ -6,7 +6,7 @@ const jobs = [
     id: 'upp', start: 'May 2026', end: 'Present', role: 'Software Engineer Intern, Data Infrastructure',
     company: 'University Pension Plan Ontario', category: 'Investment data',
     points: [
-      'Built a Python / SQL / Streamlit ETL pipeline for the Public Markets Quant team. It pulls from GCP, Bloomberg, Albourne, and DataHub, applies CAD FX transformations, refreshes Excel reports, and writes the results back to GCP — saving hours of recurring manual work.',
+      'Built a Python / SQL / Streamlit ETL pipeline for the Public Markets Quant team. It pulls from GCP, Bloomberg, Albourne, and DataHub, applies CAD FX transformations, refreshes Excel reports, and writes the results back to GCP. This saves hours of recurring manual work.',
       'Deployed an upgraded Streamlit app that standardized reporting and delivered analysis-ready datasets for quantitative research and portfolio analysis.',
       'Gathered requirements directly from portfolio managers, business stakeholders, and engineers.',
     ],
@@ -38,7 +38,7 @@ export default function Experience() {
       <div className="experience-ledger">
         {jobs.map(job => <Reveal key={job.id}>
           <article className="job" id={job.id} tabIndex={-1}>
-            <div className="job-meta"><p className="job-date mono">{job.start}<span>— {job.end}</span></p><p className="job-location">Toronto, ON</p><span className="job-category">{job.category}</span></div>
+            <div className="job-meta"><p className="job-date mono">{job.start}<span>to {job.end}</span></p><p className="job-location">Toronto, ON</p><span className="job-category">{job.category}</span></div>
             <div className="job-body"><p className="job-company">{job.company}</p><h3>{job.role}</h3><ul>{job.points.map(point => <li key={point}>{point}</li>)}</ul></div>
           </article>
         </Reveal>)}

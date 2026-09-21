@@ -23,7 +23,7 @@ npm run preview
 - Canonical, social metadata, Person JSON-LD, and the sitemap use `https://matt-portfolio-site-tau.vercel.app/`. Update them together if the domain changes.
 - `public/og.png` is a 1200 × 630 social preview. The favicon and manifest icons use the MF identity.
 
-## Validation — September 20, 2026
+## Validation: September 20, 2026
 
 - Production build and ESLint pass.
 - Inspected the live Vite site in light and dark themes at mobile, tablet, and desktop sizes. Checked widths 360, 768, 1024, 1440, and 1920px in both themes: no horizontal document overflow and no visible link/button shorter than 44px.
@@ -40,4 +40,4 @@ Contrast minima across base and raised surfaces (WCAG relative luminance):
 - Dark: primary text 14.40:1, secondary 7.60:1, accent 7.52:1, control borders 3.98:1, positive 8.52:1, negative 7.81:1.
 - Decorative dividers use a quieter token; they do not identify controls. Color signals also have written labels and signs.
 
-The page has no content imagery or image-driven layout shifts. Fonts retain preconnect and `display=swap`. Formal Lighthouse/CLS and screen-reader audits were not run; keyboard and layout checks used Chromium in the local browser. Dependency installation reported nine existing audit advisories; dependency upgrades were outside this visual/content rework.
+The About illustration is lazy-loaded with explicit dimensions to reserve its space. Fonts retain preconnect and `display=swap`. Formal Lighthouse/CLS and screen-reader audits were not run; keyboard and layout checks used Chromium in the local browser. Dependency installation reported nine existing audit advisories; dependency upgrades were outside this visual/content rework.

@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="hero-copy">
           <h1 id="hero-title">Matt Farzaneh<span className="hero-period">.</span></h1>
           <p className="hero-positioning">Low-latency systems.<br />Quantitative finance.</p>
-          <p className="hero-description">I build the infrastructure behind the result — from investment data pipelines to order books tested against real exchange data.</p>
+          <p className="hero-description">I build the infrastructure behind the result, from investment data pipelines to order books tested against real exchange data.</p>
           <div className="hero-links">
             <a href="#projects" className="button button-primary">Explore the work <FiArrowDown aria-hidden="true" /></a>
             <a href="/resume.pdf" download="Matt-Farzaneh-Resume.pdf" className="button"><FiDownload aria-hidden="true" /> Resume <span className="download-size">160 KB</span></a>
