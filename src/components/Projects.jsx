@@ -21,7 +21,7 @@ export default function Projects() {
               <div className="project-copy">
                 <p className="project-context">IgnitionHacks V7</p><h3 id="quant-title">AI Quant Council</h3>
                 <p className="project-hook">A trade thesis needs more than a convincing answer.</p>
-                <p>Seven agents turn a plain-English thesis into source-linked trade ideas. A quantitative validator rejects ideas below a Sharpe floor or without positive benchmark excess.</p>
+                <p>Seven GPT-4o-mini agents turn a plain-English thesis into source-linked trade ideas. A quantitative validator rejects ideas below a Sharpe floor or without positive benchmark excess.</p>
                 <ul className="project-evidence">
                   <li><strong>Retrieval that respects the clock.</strong> Point-in-time retrieval over 26,000 SEC filing chunks in FAISS, using text-embedding-3-small. A 229-test suite caught a bug in the leakage detector itself.</li>
                   <li><strong>Returns after modeled costs.</strong> An event-driven backtester charges commission and participation-rate slippage. The seven top-ranked names came from a 499-name scored universe.</li>
@@ -48,7 +48,7 @@ export default function Projects() {
                 <p>A C++17 / Python limit order book checked against real Nasdaq TotalView-ITCH data. Modeling the queue turned an apparently profitable strategy into a loss.</p>
                 <ul className="project-evidence">
                   <li><strong>Zero drift at 1,000 random checkpoints.</strong> 8,000 assertions cross-checked levels, order counts, and exact FIFO queue position against an independent reference over a 14.47M-message day.</li>
-                  <li><strong>Profile the boundary, then batch it.</strong> Python/C++ crossings accounted for 85% of scalar cost. Batching once per replay brought the boundary to 0.88 µs/event and throughput to 7.8M events/sec.</li>
+                  <li><strong>Profile the boundary, then batch it.</strong> Python/C++ crossings accounted for 85% of scalar cost. Batching once per replay brought the boundary to 0.88 µs/event against a 20 µs target, and throughput to 7.8M events/sec.</li>
                 </ul>
                 <p className="project-tech mono">C++17 / Python / pybind11 / Databento API</p>
                 <ProjectLinks name="Nasdaq ITCH Order Book Engine" code="https://github.com/MattFrz/ITCH-Engine" live="https://itch-engine-t4ngmjgaseufnqn5foske3.streamlit.app/" />

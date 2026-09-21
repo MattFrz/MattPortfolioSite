@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matt-portfolio-site-tau.vercel.app/sitemap.xml

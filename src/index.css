@@ -45,6 +45,7 @@ section { scroll-margin-top: 24px; }
 .section-number { color: var(--accent); margin-right: 12px; }
 .section-intro { max-width: 68ch; color: var(--text-secondary); margin-top: 12px; }
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.reveal:focus-within { opacity: 1 !important; transform: none !important; }
 .text-link { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-size: var(--text-small); font-weight: 600; }
 .text-link:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 5px; }
 .text-link svg { width: 16px; height: 16px; }

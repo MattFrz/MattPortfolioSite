@@ -17,6 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const dialog = useRef(null)
   const trigger = useRef(null)
+  const destination = useRef(null)
 
   useEffect(() => {
     let scheduled = false
@@ -47,8 +48,16 @@ export default function Navbar() {
 
   const closeMenu = () => dialog.current?.close()
   const navigate = (id) => {
+    destination.current = id
     closeMenu()
-    requestAnimationFrame(() => document.getElementById(id)?.focus({ preventScroll: true }))
+  }
+  const trapFocus = (event) => {
+    if (event.key !== 'Tab') return
+    const focusable = [...dialog.current.querySelectorAll('a[href], button')]
+    const first = focusable[0]
+    const last = focusable.at(-1)
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus() }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus() }
   }
   const navLinks = (mobile = false) => links.map(({ id, label }, index) => (
     <a key={id} href={'#' + id} aria-current={active === id ? 'location' : undefined}
@@ -71,7 +80,13 @@ export default function Navbar() {
         </div>
       </div>
       <dialog ref={dialog} id="mobile-navigation" className="mobile-menu" aria-labelledby="menu-title"
-        onClose={() => { setOpen(false); trigger.current?.focus() }}
+        onKeyDown={trapFocus}
+        onClose={() => {
+          setOpen(false)
+          const target = destination.current ? document.getElementById(destination.current) : trigger.current?.offsetParent ? trigger.current : document.querySelector('.logo')
+          target?.focus({ preventScroll: true })
+          destination.current = null
+        }}
         onClick={(event) => { if (event.target === dialog.current) closeMenu() }}>
         <div className="mobile-menu-inner">
           <div className="mobile-menu-heading"><span className="eyebrow" id="menu-title">Navigation</span><button autoFocus className="icon-button" onClick={closeMenu} aria-label="Close navigation"><FiX aria-hidden="true" /></button></div>
