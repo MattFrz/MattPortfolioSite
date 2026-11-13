@@ -146,7 +146,6 @@ export default function Home() {
 
       <section className="band contact" aria-labelledby="contact">
         <Reveal as="h2" className="contact-title" id="contact">Email me.</Reveal>
-        <Reveal as="p" className="contact-sub">I’m looking for a Summer 2027 software engineering internship.</Reveal>
         <Reveal as="p" className="contact-email"><a href={'mailto:' + profile.email}>{profile.email}</a></Reveal>
         <Reveal as="p" className="contact-links">
           <More href={profile.resume} download="Matt-Farzaneh-Resume.pdf">Résumé (PDF)</More>

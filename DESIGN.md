@@ -275,7 +275,7 @@ These four are fills only (dots, bars, swatches), never text. Each clears 3:1 ag
 - **Section Title** (700, up to 64px, 1.06): centred band titles that end in a full stop ("What I measured.", "Experience.", "Outside of work.").
 - **Statement** (650, up to 60px, 1.12): the scroll-lit statement, one large paragraph, `text-wrap: pretty`.
 - **Title** (700, up to 32px, 1.15): employer names in experience rows; project-page section heads use 700 at up to 40px.
-- **Lede** (500, up to 28px, 1.25, Ink Two): hero intro (30ch), chapter ledes (600, up to 32px, 28ch), project summaries, contact sub-line. Always balanced.
+- **Lede** (500, up to 28px, 1.25, Ink Two): hero intro (30ch), chapter ledes (600, up to 32px, 28ch), project summaries. Always balanced.
 - **Prose** (400, 19px, 1.5): project-page paragraphs and long lists inside a 720px column; role summaries cap at 60ch.
 - **Body** (400, 17px, 1.47, `cv11`): the base size for links, buttons and default text.
 - **Label** (400, 13px): nav links (at 80% opacity), captions, trace meta, chips (12px).

@@ -192,7 +192,6 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 /* ---------- Contact ---------- */
 .contact { text-align: center; padding-bottom: clamp(96px, 12vw, 160px); }
 .contact-title { font-size: clamp(56px, 9vw, 112px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; scroll-margin-top: 80px; }
-.contact-sub { margin-top: 16px; font-size: clamp(21px, 2.4vw, 28px); font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); }
 .contact-email { margin-top: 28px; font-size: clamp(22px, 3vw, 36px); font-weight: 600; letter-spacing: -0.03em; overflow-wrap: anywhere; }
 .contact-email a { color: var(--link); }
 .contact-email a:hover { text-decoration: underline; text-underline-offset: 0.15em; }

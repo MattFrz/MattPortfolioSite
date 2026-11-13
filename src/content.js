@@ -162,7 +162,7 @@ export const experience = [
     id: 'upp',
     org: 'University Pension Plan Ontario',
     role: 'Analyst Intern, Strategic Initiatives (Software Development)',
-    dates: 'May 2026 – Present',
+    dates: 'May 2026 to present',
     location: 'Toronto, ON',
     summary: 'Data pipelines for the Public Markets Quant team, a Dockerized Streamlit app on GCP for manager reviews, and AI agents with input validation and credential protection.',
     points: [
@@ -177,7 +177,7 @@ export const experience = [
     id: 'after-image',
     org: 'After Image Inc',
     role: 'Co-Founder / Developer',
-    dates: 'Jun 2025 – May 2026',
+    dates: 'Jun 2025 to May 2026',
     location: 'Toronto, ON',
     summary: 'The Node.js backend on AWS for a B2B SaaS product I co-founded with a teammate, including role-based access, reporting APIs and Stripe billing.',
     points: [
@@ -190,7 +190,7 @@ export const experience = [
     id: 'kd',
     org: 'K&D Consulting',
     role: 'Data Engineer & Business Analyst',
-    dates: 'May 2024 – Sep 2025',
+    dates: 'May 2024 to Sep 2025',
     location: 'Toronto, ON',
     summary: 'A Python automation framework driven by YAML configs that cut manual Excel processing by 95%.',
     points: [
@@ -277,7 +277,7 @@ export const liveTraces = [
 
 // Apple-style home page copy.
 export const home = {
-  intro: 'Software engineer in Toronto. I study computer science at Western and I’m looking for a Summer 2027 internship.',
+  intro: 'Software engineer in Toronto. I study computer science at Western.',
   statement: 'I like work where you can check the answer. My order book matched Databento’s at all 3.77 million checkpoints in a day of AAPL trading.¹ My Urbanova job queue recovers when a worker stalls mid-run, and code checks Gemini’s numbers and citations before anything is saved.',
   chapters: {
     urbanova: {
