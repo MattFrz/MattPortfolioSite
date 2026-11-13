@@ -1,6 +1,6 @@
 # Matt Farzaneh
 
-Personal portfolio built with React 19, Vite, Framer Motion, react-icons, and hand-authored component CSS. No additional application dependencies were introduced for the redesign.
+Personal portfolio, built with React 19 and Vite. It follows Apple's product-page style: dark by default, big centred type in Inter, one idea per screen, and scroll animations (a statement that lights up word by word, showcases that scale into place, numbers that count up). The Urbanova chapter runs a live replay of the job pipeline I built. Every number links to a footnote with its test conditions, and each featured project has its own write-up page.
 
 ## Development
 
@@ -12,32 +12,32 @@ npm run build
 npm run preview
 ```
 
-## Design and content
+## Structure
 
-- `src/index.css` owns the palette, semantic light/dark tokens, typography, spacing, and motion tokens. Component styles use semantic colors only.
-- `index.html` selects the theme before paint. `useTheme` follows the OS until the visitor chooses a theme, safely persists that choice, responds to other tabs, and updates browser chrome.
-- `Reveal` uses the shared motion tokens for a single 12px/320ms entrance. Reduced-motion visitors receive plain, visible markup. Keyboard focus makes a revealed region immediately visible.
-- The mobile navigation uses a modal dialog, explicit Tab wrapping, Escape dismissal, scroll locking, and focus restoration/section transfer.
-- The original supplied resume is preserved at `public/resume.pdf` (163,647 bytes; displayed as 160 KB). When replacing it, update the displayed size in Hero and Contact.
-- Project repository and demo URLs come from the resume. Results are attributed to their project or employer, and simulations are labeled as backtests.
-- Canonical, social metadata, Person JSON-LD, and the sitemap use `https://matt-portfolio-site-tau.vercel.app/`. Update them together if the domain changes.
-- `public/og.png` is a 1200 × 630 social preview. The favicon and manifest icons use the MF identity.
+- `src/content.js` holds all copy: profile, home-page copy and footnotes, projects (with their write-ups), experience, skills, and the trace replays. Edit content here, not in components.
+- `src/components/Home.jsx` is the home page: hero, scroll-lit statement, project chapters, measurements, experience, about, contact and footnotes. `src/components/ProjectPage.jsx` renders `/work/:slug` from the same content.
+- `src/components/LiveTrace.jsx` is the animated trace. One CSS variable (`--t`) drives every bar, event and label. It pauses offscreen, in hidden tabs and on the pause button, and is static under reduced motion. Its data (`liveTraces` in `content.js`) is labelled illustrative.
+- `src/hooks/useMotion.js` holds the scroll-progress, count-up, entrance, in-view and reduced-motion hooks.
+- `src/components/Sheet.jsx` has the nav, external links, section headings and footer. `src/components/Figures.jsx` draws the flow, stage-timing and backtest figures in HTML.
+- `src/router.js` and `src/components/Link.jsx` are a small History API router. Page changes use the View Transitions API when it's available and motion isn't reduced.
+- `vercel.json` rewrites unknown paths to `index.html` so `/work/...` URLs load directly.
+- `src/index.css` owns the tokens and styles: true black (white in light mode), #161617 tiles, one link blue, Inter with optical sizing, JetBrains Mono only for trace data. The four trace colours are used only inside the trace.
 
-## Validation: September 20, 2026
+## Content rules
 
-- Production build and ESLint pass.
-- Inspected the live Vite site in light and dark themes at mobile, tablet, and desktop sizes. Checked widths 360, 768, 1024, 1440, and 1920px in both themes: no horizontal document overflow and no visible link/button shorter than 44px.
-- Traversed all 26 desktop controls by keyboard: visible focus rings, correct sequence, no closed-menu links in the tab order. Skip-to-content focuses `main`.
-- Verified mobile forward/reverse focus wrapping, Escape close, focus restoration, scroll lock, and focus transfer to the selected section. Native dialog focus alone allowed a reverse-Tab escape; explicit wrapping fixes it.
-- Verified saved theme survives reload and updates `theme-color`. Ten isolated bootstrap scenarios cover both OS defaults, both saved choices, invalid storage values, and denied storage.
-- A local reduced-motion fixture verified there are no animated reveal wrappers or hidden content. Global CSS also disables smooth scrolling and transitions under the actual media query.
-- Confirmed one h1, logical heading hierarchy, header/main/nav/footer landmarks, real project links, valid JSON-LD/manifest, and a byte-identical resume download.
-- All five project repository/demo URLs resolved in public-page or HTTP checks. Demo availability remains dependent on their respective hosts.
+These come from the portfolio brief and are worth keeping when editing:
 
-Contrast minima across base and raised surfaces (WCAG relative luminance):
+- Every metric keeps its conditions (in-memory, backtest, observed, team suite).
+- Team work and personal contribution stay separate. AI Quant Council and Urbanova credit teammates by lane.
+- No phone number on the site. No employer screenshots, internal prompts, or sensitive architecture.
+- No invented adoption, revenue, users, or hackathon wins.
 
-- Light: primary text 14.06:1, secondary 5.84:1, accent 6.37:1, control borders 3.42:1, positive 5.91:1, negative 6.22:1.
-- Dark: primary text 14.40:1, secondary 7.60:1, accent 7.52:1, control borders 3.98:1, positive 8.52:1, negative 7.81:1.
-- Decorative dividers use a quieter token; they do not identify controls. Color signals also have written labels and signs.
+Facts were checked against each project's repository in November 2026. If a repo's numbers change (for example after a bug fix), update `src/content.js` to match.
 
-The About illustration is lazy-loaded with explicit dimensions to reserve its space. Fonts retain preconnect and `display=swap`. Formal Lighthouse/CLS and screen-reader audits were not run; keyboard and layout checks used Chromium in the local browser. Dependency installation reported nine existing audit advisories; dependency upgrades were outside this visual/content rework.
+## Assets
+
+- `public/resume.pdf` is the SWE resume (about 200 KB). If you replace it, update `resumeSize` in `src/content.js`.
+- `public/og.png` is a 1200 × 630 capture of the hero.
+- `public/images/urbanova-walking-route-500-dundas.webp` is cropped from the Urbanova repo (`data/reviewed/walking_routes.png`), output of the data pipeline I built. Map data © OpenStreetMap contributors (ODbL); development data © City of Toronto.
+- `public/images/urbanova-demo.webp`, `itch-engine-demo.webp` and `ai-quant-council-demo.webp` are screenshots of each project's live demo, captured with headless Chrome on 2026-11-13. Urbanova shows the saved run "2026-10-22 12:48 · New homes · current service" playing at 30×. ITCH Engine is the Streamlit viewer's overview on its bundled synthetic day, cropped to the header, summary tiles and equity chart. AI Quant Council is the Quantitative Validation panel after running the default example thesis. The Urbanova map tiles are © Mapbox © OpenStreetMap contributors. Recapture them if a demo changes.
+- `PRODUCT.md` and `.impeccable/` hold the Impeccable design context for this project.
