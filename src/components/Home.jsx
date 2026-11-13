@@ -145,6 +145,10 @@ export default function Home() {
       </section>
 
       <section className="band contact" aria-labelledby="contact">
+        <Reveal className="contact-photo">
+          <img src={profile.headshot.src} width={profile.headshot.width} height={profile.headshot.height}
+            alt={profile.headshot.alt} loading="lazy" decoding="async" />
+        </Reveal>
         <Reveal as="h2" className="contact-title" id="contact">Email me.</Reveal>
         <Reveal as="p" className="contact-email"><a href={'mailto:' + profile.email}>{profile.email}</a></Reveal>
         <Reveal as="p" className="contact-links">

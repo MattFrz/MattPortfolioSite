@@ -12,6 +12,10 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/matt-farzaneh-36153727a/',
   resume: '/resume.pdf',
   resumeSize: '200 KB',
+  headshot: {
+    src: '/images/matt-farzaneh-headshot.webp', width: 240, height: 240,
+    alt: 'Matt Farzaneh in a navy suit, light blue shirt and navy tie.',
+  },
 }
 
 export const projects = [
@@ -31,6 +35,24 @@ export const projects = [
     stack: ['TypeScript', 'Express', 'Python', 'PostgreSQL', 'Zod', 'Gemini API', 'Railway'],
     code: 'https://github.com/emtato/Urbanova',
     live: 'https://urbanova.ems.lol/',
+    // Event photos. Alt text describes what is visible; nobody else is named.
+    photos: {
+      caption: 'Hack the Valley 11, October 2026.',
+      items: [
+        {
+          src: '/images/hack-the-valley-11-opening.webp', width: 800, height: 1200,
+          alt: 'A lecture hall full of hackers. Two large screens read “You’re in! Welcome to Hack the Valley 11”, and a keyboard, drum kit and microphones are set up on the floor.',
+        },
+        {
+          src: '/images/hack-the-valley-11-at-desk.webp', width: 800, height: 1200,
+          alt: 'Matt in profile at a desk, wearing a black Hack the Valley 11 T-shirt and an event lanyard, with other hackers seated beside him.',
+        },
+        {
+          src: '/images/hack-the-valley-11-pair.webp', width: 800, height: 533,
+          alt: 'Matt smiling in a black HTV 11 T-shirt and event lanyard, standing next to another hacker in a pink shirt and glasses.',
+        },
+      ],
+    },
     detail: {
       problem: 'A new tower can add hundreds of homes near a streetcar line. People who already ride it want to know if their stop gets worse, with longer waits, fuller cars, or a streetcar that passes them full. Planning documents don’t answer that for their own trip.',
       product: 'Urbanova models the westbound 505 Dundas corridor from Broadview Avenue to Yonge Street, nine stops, around three real development proposals. You can compare housing growth with unchanged service against more frequent streetcars or a priority lane, and see crowding, waits, and riders left behind at each stop. The team also built a 3D neighbourhood view with shadows.',

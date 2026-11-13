@@ -191,6 +191,8 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 
 /* ---------- Contact ---------- */
 .contact { text-align: center; padding-bottom: clamp(96px, 12vw, 160px); }
+.contact-photo { margin: 0 auto 32px; width: clamp(88px, 10vw, 112px); }
+.contact-photo img { display: block; width: 100%; height: auto; border-radius: 50%; background: var(--bg-3); }
 .contact-title { font-size: clamp(56px, 9vw, 112px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; scroll-margin-top: 80px; }
 .contact-email { margin-top: 28px; font-size: clamp(22px, 3vw, 36px); font-weight: 600; letter-spacing: -0.03em; overflow-wrap: anywhere; }
 .contact-email a { color: var(--link); }
@@ -380,6 +382,14 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .figure-shot.is-inset { padding: clamp(16px, 4vw, 48px) clamp(16px, 4vw, 48px) 0; }
 .figure-shot.is-inset img { max-width: var(--shot-max); margin-inline: auto; border-radius: 12px; }
 .figure-shot.is-inset figcaption { padding: 20px 0 clamp(20px, 3vw, 32px); margin-inline: auto; max-width: var(--shot-max); }
+.photo-gallery { padding: clamp(16px, 3vw, 24px); }
+.photo-grid { list-style: none; display: grid; grid-template-columns: var(--cols); gap: 12px; align-items: start; }
+.photo-grid img { display: block; width: 100%; height: auto; border-radius: var(--card-radius); background: var(--bg-3); }
+.photo-gallery figcaption { margin-top: 16px; padding-inline: 4px; }
+@media (max-width: 760px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; }
+  .photo-grid .is-wide { grid-column: 1 / -1; }
+}
 .figure-slot { margin: 40px 0 0; }
 .figure-image { padding: 0; overflow: hidden; max-width: 640px; }
 .figure-image img { display: block; width: 100%; height: auto; }

@@ -352,6 +352,11 @@ The work, running. A 28px tile holding a header (live dot, mono title, meta, chi
 ### Demo screenshots
 Each home-page chapter's showcase opens with a screenshot of that project's live demo, in a Graphite Tile with the image edge to edge and a 13px Ink Three caption below. Tall captures (ITCH, AI Quant Council) sit inset at a capped width (`--shot-max`) with a 12px image radius so they don't fill several screens. The showcase stacks the screenshot above the project's figure with a 20px gap; AI Quant Council has the screenshot only, and its flow figure lives on the project page. Captions say whose work the screen shows and when the data is synthetic or in-sample. Screenshots are of the demos as published, never of employer systems.
 
+### Photos
+- **Headshot:** a circle, 112px on desktop and 88px on phones, centred 32px above "Email me." in the contact band. It uses the standard rise-in.
+- **Event gallery** (Urbanova project page, under "What it does"): a Graphite Tile with 24px padding holding the photos at their natural aspect ratios, each with an 18px radius. Grid columns are set from each photo's width-to-height ratio, so portraits and landscapes share one row height without cropping. Below 760px it becomes two columns, with landscape photos spanning both. A one-line 13px Ink Three caption follows. It uses the standard rise-in.
+- **Captions** say only the event and date. Alt text describes what is visible and never names anyone other than Matt.
+
 ### Figures
 Drawn in HTML so they reflow and read to assistive tech. **Stage trace:** rows of name / track / tabular duration, 20px bars laid end to end, the earlier stages as lighter Link Blue tints, then a large weight-700 total. **Flow:** four inner cards joined by 1px arrows with mono protocol labels and a small blue packet that travels each arrow; stacks vertically below 1000px. **Diverging bars:** a 2px zero line, 20px Ink Three (positive) and Ink (negative) bars on one shared scale, values set beside the bar end.
 

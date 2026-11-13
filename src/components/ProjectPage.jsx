@@ -3,7 +3,7 @@ import { liveTraces, projects, quantFlow } from '../content'
 import { Link } from './Link'
 import LiveTrace from './LiveTrace'
 import { External, SectionHeading } from './Sheet'
-import { BarFigure, FlowFigure, StageTrace } from './Figures'
+import { BarFigure, FlowFigure, PhotoGallery, StageTrace } from './Figures'
 
 function ArchitectureFigure({ project }) {
   if (project.slug === 'urbanova') return <LiveTrace traces={liveTraces} compact label="Live trace replay of the Urbanova job pipeline" />
@@ -46,7 +46,11 @@ export default function ProjectPage({ slug }) {
       <div className="doc-layout">
         <div className="doc-body">
           <section aria-labelledby="problem"><SectionHeading id="problem">The problem</SectionHeading><p className="prose">{d.problem}</p></section>
-          <section aria-labelledby="product"><SectionHeading id="product">What it does</SectionHeading><p className="prose">{d.product}</p></section>
+          <section aria-labelledby="product">
+            <SectionHeading id="product">What it does</SectionHeading>
+            <p className="prose">{d.product}</p>
+            {p.photos && <div className="figure-slot"><PhotoGallery photos={p.photos} /></div>}
+          </section>
           <section aria-labelledby="built">
             <SectionHeading id="built">What I built</SectionHeading>
             {d.teamNote && <p className="team-note"><strong>Team context.</strong> {d.teamNote}</p>}

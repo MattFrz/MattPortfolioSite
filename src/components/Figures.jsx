@@ -35,6 +35,25 @@ export function Screenshot({ src, width, height, alt, caption, maxWidth }) {
   )
 }
 
+// Event photos at their natural aspect ratios. Portraits and landscapes share a
+// row height because the grid columns follow each photo's width-to-height
+// ratio (set as --r), so nothing is cropped.
+export function PhotoGallery({ photos }) {
+  const [ref, motion] = useEntrance(0.15)
+  return (
+    <figure className={'figure photo-gallery reveal' + motion} ref={ref}>
+      <ul className="photo-grid" style={{ '--cols': photos.items.map((p) => (p.width / p.height).toFixed(3) + 'fr').join(' ') }}>
+        {photos.items.map((p) => (
+          <li key={p.src} className={p.width > p.height ? 'is-wide' : undefined}>
+            <img src={p.src} width={p.width} height={p.height} alt={p.alt} loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
+      <figcaption>{photos.caption}</figcaption>
+    </figure>
+  )
+}
+
 // A static trace waterfall: stages laid end to end on one time axis.
 export function StageTrace({ stages, total, caption }) {
   const [ref, motion] = useEntrance()
