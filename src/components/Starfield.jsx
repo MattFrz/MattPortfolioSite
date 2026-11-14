@@ -12,24 +12,6 @@ const stars = Array.from({ length: 64 }, (_, i) => ({
   delay: -(i % 11),
 }))
 
-// Decorative patterns, rather than a geographically accurate sky map.
-const constellationPatterns = [
-  [[15, 40], [42, 24], [65, 43], [95, 27], [123, 51]],
-  [[18, 22], [48, 36], [75, 62], [119, 54], [106, 91], [66, 94], [75, 62]],
-  [[22, 78], [46, 45], [74, 56], [99, 22], [122, 48]],
-]
-
-
-// Uneven spacing and varied silhouettes without changing on every render.
-const constellations = [
-  { x: 11, y: 19, size: 130, angle: -18, pattern: 0 },
-  { x: 48, y: 12, size: 100, angle: 32, pattern: 2 },
-  { x: 79, y: 34, size: 155, angle: 14, pattern: 1 },
-  { x: 35, y: 55, size: 120, angle: -42, pattern: 1 },
-  { x: 63, y: 78, size: 145, angle: 65, pattern: 0 },
-  { x: 14, y: 85, size: 95, angle: 24, pattern: 2 },
-]
-
 export default function Starfield() {
   const visible = usePageVisible()
   const reduced = useReducedMotion()
@@ -39,18 +21,6 @@ export default function Starfield() {
   return (
     <div className="starfield">
       <div className="starfield-sky" aria-hidden="true" data-running={running}>
-        {constellations.map((group, i) => (
-          <svg key={i} className="constellation" style={{
-              left: group.x + '%', top: group.y + '%',
-              '--constellation-size': group.size + 'px',
-              '--constellation-angle': group.angle + 'deg',
-              '--constellation-delay': -i * 2.7 + 's',
-            }}
-            viewBox="0 0 140 120" focusable="false">
-            <polyline points={constellationPatterns[group.pattern].map((point) => point.join(',')).join(' ')} />
-            {constellationPatterns[group.pattern].map(([x, y], j) => <circle key={j} cx={x} cy={y} r={j % 3 === 0 ? 2.5 : 1.8} />)}
-          </svg>
-        ))}
         {stars.map((star, i) => (
           <span key={i} className={'star' + (i % 9 === 0 ? ' star-bright' : '')} style={{
             left: star.x + '%', top: star.y + '%',

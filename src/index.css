@@ -446,8 +446,8 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 /* A fixed sky follows the homepage while content scrolls above it. */
 .home-page { position: relative; isolation: isolate; }
 .starfield { display: contents; }
-.starfield-sky { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; color: var(--ink); mask-image: linear-gradient(to right, #000, #0008 30%, #0006 50%, #0008 70%, #000); }
-.star { position: absolute; width: var(--star-size); height: var(--star-size); border-radius: 50%; background: currentColor; opacity: 0.7; }
+.starfield-sky { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; color: var(--ink); mask-image: linear-gradient(to right, #000, #000a 30%, #0008 50%, #000a 70%, #000); }
+.star { position: absolute; width: var(--star-size); height: var(--star-size); border-radius: 50%; background: currentColor; opacity: 0.85; }
 .starfield-toggle { position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 30; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 24px; background: var(--bg-2); color: var(--ink-2); font-size: 12px; cursor: pointer; pointer-events: auto; }
 .starfield-toggle:hover { color: var(--ink); background: var(--bg-2); }
 .starfield-toggle svg { width: 12px; height: 12px; }
@@ -458,7 +458,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
   .starfield-sky[data-running='true'] .star, .starfield-sky[data-running='true'] .shooting-star { animation-play-state: running; }
 }
 @keyframes star-drift {
-  from { opacity: 0.4; transform: translate3d(0, 0, 0); }
+  from { opacity: 0.6; transform: translate3d(0, 0, 0); }
   to { opacity: 1; transform: translate3d(calc(var(--star-drift) * 0.55), calc(var(--star-drift) * -1), 0); }
 }
 @media (max-width: 760px) {
@@ -478,21 +478,4 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
   2% { opacity: 0.85; }
   10% { opacity: 0; transform: translate3d(240px, 168px, 0) rotate(35deg); }
   100% { opacity: 0; transform: translate3d(240px, 168px, 0) rotate(35deg); }
-}
-
-/* Unevenly scattered groups with varied sizes and orientations. */
-.constellation { position: absolute; width: var(--constellation-size); height: auto; opacity: 0.65; translate: -50% -50%; rotate: var(--constellation-angle); }
-.constellation polyline { fill: none; stroke: currentColor; stroke-width: 0.7; stroke-opacity: 0.4; }
-.constellation circle { fill: currentColor; }
-@media (prefers-reduced-motion: no-preference) {
-  .constellation { animation: constellation-shimmer 9s ease-in-out var(--constellation-delay) infinite alternate; animation-play-state: paused; }
-  .starfield-sky[data-running='true'] .constellation { animation-play-state: running; }
-}
-@keyframes constellation-shimmer {
-  from { opacity: 0.4; transform: translateY(0); }
-  to { opacity: 0.85; transform: translateY(-10px); }
-}
-@media (max-width: 760px) {
-  .constellation { width: calc(var(--constellation-size) * 0.65); }
-  .constellation:nth-child(3n) { display: none; }
 }
