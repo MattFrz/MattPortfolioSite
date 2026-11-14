@@ -453,11 +453,13 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .starfield-toggle svg { width: 12px; height: 12px; }
 @media (prefers-reduced-motion: no-preference) {
   .star { animation: star-drift var(--star-duration) ease-in-out var(--star-delay) infinite alternate; animation-play-state: paused; }
-  .starfield-sky[data-running='true'] .star { animation-play-state: running; }
+  .shooting-star { animation: meteor-pass 14s linear 2s infinite; animation-play-state: paused; }
+  .shooting-star-second { animation-duration: 19s; animation-delay: 8s; }
+  .starfield-sky[data-running='true'] .star, .starfield-sky[data-running='true'] .shooting-star { animation-play-state: running; }
 }
 @keyframes star-drift {
-  from { opacity: 0.45; transform: translateY(0); }
-  to { opacity: 1; transform: translateY(-8px); }
+  from { opacity: 0.4; transform: translate3d(0, 0, 0); }
+  to { opacity: 1; transform: translate3d(calc(var(--star-drift) * 0.55), calc(var(--star-drift) * -1), 0); }
 }
 @media (max-width: 760px) {
   .star:nth-child(even) { display: none; }
@@ -468,3 +470,12 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .star-bright::after { width: 11px; height: 1px; }
 
 @media print { .starfield-sky, .starfield-toggle { display: none; } }
+
+.shooting-star { position: absolute; top: 14%; left: 5%; width: 90px; height: 2px; opacity: 0; background: linear-gradient(to right, transparent, currentColor); border-radius: 50%; transform: rotate(35deg); }
+.shooting-star-second { top: 48%; left: 73%; width: 65px; }
+@keyframes meteor-pass {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(35deg); }
+  2% { opacity: 0.85; }
+  10% { opacity: 0; transform: translate3d(240px, 168px, 0) rotate(35deg); }
+  100% { opacity: 0; transform: translate3d(240px, 168px, 0) rotate(35deg); }
+}

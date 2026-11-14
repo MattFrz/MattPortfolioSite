@@ -7,7 +7,8 @@ const stars = Array.from({ length: 64 }, (_, i) => ({
   x: (i * 61.8034) % 100,
   y: (i * 37.7137) % 100,
   size: i % 9 === 0 ? 3.5 : i % 3 === 0 ? 2.5 : 1.5,
-  duration: 5 + (i % 7),
+  duration: 8 + (i % 7),
+  drift: 20 + (i % 5) * 9,
   delay: -(i % 11),
 }))
 
@@ -26,8 +27,11 @@ export default function Starfield() {
             '--star-size': star.size + 'px',
             '--star-duration': star.duration + 's',
             '--star-delay': star.delay + 's',
+            '--star-drift': star.drift + 'px',
           }} />
         ))}
+        <span className="shooting-star" />
+        <span className="shooting-star shooting-star-second" />
       </div>
       {!reduced && (
         <button className="starfield-toggle" onClick={() => setPaused(!paused)}
