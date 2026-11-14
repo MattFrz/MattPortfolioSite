@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FiPause, FiPlay } from 'react-icons/fi'
-import { useInView, usePageVisible, useReducedMotion } from '../hooks/useMotion'
+import { usePageVisible, useReducedMotion } from '../hooks/useMotion'
 
 // Fixed positions keep the sky consistent across renders and theme changes.
 const stars = Array.from({ length: 64 }, (_, i) => ({
@@ -12,14 +12,13 @@ const stars = Array.from({ length: 64 }, (_, i) => ({
 }))
 
 export default function Starfield() {
-  const [ref, inView] = useInView({ threshold: 0 })
   const visible = usePageVisible()
   const reduced = useReducedMotion()
   const [paused, setPaused] = useState(false)
-  const running = inView && visible && !reduced && !paused
+  const running = visible && !reduced && !paused
 
   return (
-    <div className="starfield" ref={ref}>
+    <div className="starfield">
       <div className="starfield-sky" aria-hidden="true" data-running={running}>
         {stars.map((star, i) => (
           <span key={i} className={'star' + (i % 9 === 0 ? ' star-bright' : '')} style={{

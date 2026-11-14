@@ -31,6 +31,6 @@ Retain modest entrance animations, expandable experience rows, and optional page
 
 Use semantic headings, visible keyboard focus, descriptive image alt text, and labelled external links. Personal photos must be authentic; never invent imagery or anecdotes.
 
-## Intro background
+## Homepage background
 
-A sparse monochrome starfield frames the introduction, with a clear centre for text. Stars drift and brighten slowly, pause offscreen or in hidden tabs, and stay static under reduced motion. A labelled pause control is available. Mobile shows fewer stars. This is decorative, without implying a personal astronomy interest.
+A fixed monochrome starfield stays behind the homepage as visitors scroll, with lower contrast in the centre for text. Stars drift and brighten slowly, pause in hidden tabs, and stay static under reduced motion. A fixed pause control remains available in the bottom corner. Mobile shows fewer stars. This is decorative, without implying a personal astronomy interest.

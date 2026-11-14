@@ -443,14 +443,12 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .about-photo img { display: block; width: 100%; height: auto; border-radius: var(--card-radius); }
 .about-photo figcaption { margin-top: 12px; font-size: 15px; color: var(--ink-3); }
 
-/* A quiet night sky around the introduction. The centre stays clear for copy. */
-.hero-scene { position: relative; isolation: isolate; }
-.hero-scene .hero { position: relative; z-index: 1; pointer-events: none; }
-.hero-scene .hero a { pointer-events: auto; }
-.starfield { position: absolute; inset: 0; pointer-events: none; }
-.starfield-sky { position: absolute; inset: 0; overflow: hidden; color: var(--ink); mask-image: radial-gradient(ellipse at 50% 45%, transparent 10%, #000b 48%, #000 80%), linear-gradient(#000 65%, transparent); mask-composite: intersect; }
+/* A fixed sky follows the homepage while content scrolls above it. */
+.home-page { position: relative; isolation: isolate; }
+.starfield { display: contents; }
+.starfield-sky { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; color: var(--ink); mask-image: linear-gradient(to right, #000, #0004 30%, #0002 50%, #0004 70%, #000); }
 .star { position: absolute; width: var(--star-size); height: var(--star-size); border-radius: 50%; background: currentColor; opacity: 0.7; }
-.starfield-toggle { position: absolute; right: var(--gutter); bottom: 0; z-index: 2; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 24px; background: transparent; color: var(--ink-3); font-size: 12px; cursor: pointer; pointer-events: auto; }
+.starfield-toggle { position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 30; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 24px; background: var(--bg-2); color: var(--ink-2); font-size: 12px; cursor: pointer; pointer-events: auto; }
 .starfield-toggle:hover { color: var(--ink); background: var(--bg-2); }
 .starfield-toggle svg { width: 12px; height: 12px; }
 @media (prefers-reduced-motion: no-preference) {
@@ -468,3 +466,5 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .star-bright::before, .star-bright::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: currentColor; border-radius: 50%; opacity: 0.8; }
 .star-bright::before { width: 1px; height: 11px; }
 .star-bright::after { width: 11px; height: 1px; }
+
+@media print { .starfield-sky, .starfield-toggle { display: none; } }

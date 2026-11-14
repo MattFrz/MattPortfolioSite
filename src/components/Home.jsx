@@ -22,16 +22,13 @@ function Reveal({ as = 'div', className = '', children, ...rest }) {
 
 function Hero() {
   return (
-    <section className="hero-scene" aria-labelledby="page-title">
-      <Starfield />
-      <div className="hero">
+    <section className="hero" aria-labelledby="page-title">
       <h1 id="page-title" tabIndex={-1}>Matt Farzaneh</h1>
       <p className="hero-intro">{home.intro}</p>
       <p className="hero-links">
         <More href={profile.resume} download="Matt-Farzaneh-Resume.pdf">Download résumé</More>
         <More to="/#work">See the work</More>
       </p>
-      </div>
     </section>
   )
 }
@@ -85,7 +82,8 @@ function Role({ job }) {
 export default function Home() {
   const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]))
   return (
-    <main id="main" className="page" tabIndex={-1}>
+    <main id="main" className="page home-page" tabIndex={-1}>
+      <Starfield />
       <Hero />
 
       <div id="work" className="chapters">
