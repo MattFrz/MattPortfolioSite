@@ -30,3 +30,7 @@ Below 760px, navigation wraps into a second row, experience and fact rows stack,
 Retain modest entrance animations, expandable experience rows, and optional page transitions. No sticky statement reveal, scroll-scaling showcases, or animated metric counters. Respect reduced motion. The illustrative trace pauses offscreen and in hidden tabs and has a pause control.
 
 Use semantic headings, visible keyboard focus, descriptive image alt text, and labelled external links. Personal photos must be authentic; never invent imagery or anecdotes.
+
+## Intro background
+
+A sparse monochrome starfield frames the introduction, with a clear centre for text. Stars drift and brighten slowly, pause offscreen or in hidden tabs, and stay static under reduced motion. A labelled pause control is available. Mobile shows fewer stars. This is decorative, without implying a personal astronomy interest.

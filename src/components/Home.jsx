@@ -4,6 +4,7 @@ import { experience, home, profile, projects, skills } from '../content'
 import { useEntrance } from '../hooks/useMotion'
 import { Link } from './Link'
 import { Screenshot } from './Figures'
+import Starfield from './Starfield'
 
 // Apple-style text link: blue, with a chevron that nudges on hover.
 function More({ to, href, download, children, external }) {
@@ -21,13 +22,16 @@ function Reveal({ as = 'div', className = '', children, ...rest }) {
 
 function Hero() {
   return (
-    <section className="hero" aria-labelledby="page-title">
+    <section className="hero-scene" aria-labelledby="page-title">
+      <Starfield />
+      <div className="hero">
       <h1 id="page-title" tabIndex={-1}>Matt Farzaneh</h1>
       <p className="hero-intro">{home.intro}</p>
       <p className="hero-links">
         <More href={profile.resume} download="Matt-Farzaneh-Resume.pdf">Download résumé</More>
         <More to="/#work">See the work</More>
       </p>
+      </div>
     </section>
   )
 }

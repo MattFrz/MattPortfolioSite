@@ -347,7 +347,7 @@ export const home = {
     },
   },
   about: [
-    'Outside of software, I spend a lot of time in the gym. I used to compete in swimming at the Eastern Canadian level, and now I’m focused on strength training.',
+    'Outside of software, I spend a lot of time in the gym. I used to swim competitively at the Eastern Canadian level, and now I’m training for powerlifting.',
     'I also enjoy hackathons for the building and the people. Urbanova and AI Quant Council both started at one with friends.',
   ],
 }

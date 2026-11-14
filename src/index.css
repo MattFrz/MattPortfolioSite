@@ -442,3 +442,25 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .about-photo { max-width: 600px; margin: 32px auto 0; }
 .about-photo img { display: block; width: 100%; height: auto; border-radius: var(--card-radius); }
 .about-photo figcaption { margin-top: 12px; font-size: 15px; color: var(--ink-3); }
+
+/* A quiet night sky around the introduction. The centre stays clear for copy. */
+.hero-scene { position: relative; isolation: isolate; }
+.hero-scene .hero { position: relative; z-index: 1; pointer-events: none; }
+.hero-scene .hero a { pointer-events: auto; }
+.starfield { position: absolute; inset: 0; pointer-events: none; }
+.starfield-sky { position: absolute; inset: 0; overflow: hidden; color: var(--ink); mask-image: radial-gradient(ellipse at 50% 45%, transparent 12%, #0008 60%, #000 100%), linear-gradient(#000, transparent); mask-composite: intersect; }
+.star { position: absolute; width: var(--star-size); height: var(--star-size); border-radius: 50%; background: currentColor; opacity: 0.4; }
+.starfield-toggle { position: absolute; right: var(--gutter); bottom: 0; z-index: 2; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 24px; background: transparent; color: var(--ink-3); font-size: 12px; cursor: pointer; pointer-events: auto; }
+.starfield-toggle:hover { color: var(--ink); background: var(--bg-2); }
+.starfield-toggle svg { width: 12px; height: 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  .star { animation: star-drift var(--star-duration) ease-in-out var(--star-delay) infinite alternate; animation-play-state: paused; }
+  .starfield-sky[data-running='true'] .star { animation-play-state: running; }
+}
+@keyframes star-drift {
+  from { opacity: 0.2; transform: translateY(0); }
+  to { opacity: 0.7; transform: translateY(-8px); }
+}
+@media (max-width: 760px) {
+  .star:nth-child(even) { display: none; }
+}
