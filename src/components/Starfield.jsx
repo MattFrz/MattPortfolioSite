@@ -6,7 +6,7 @@ import { useInView, usePageVisible, useReducedMotion } from '../hooks/useMotion'
 const stars = Array.from({ length: 64 }, (_, i) => ({
   x: (i * 61.8034) % 100,
   y: (i * 37.7137) % 100,
-  size: i % 9 === 0 ? 2.5 : i % 3 === 0 ? 1.75 : 1,
+  size: i % 9 === 0 ? 3.5 : i % 3 === 0 ? 2.5 : 1.5,
   duration: 5 + (i % 7),
   delay: -(i % 11),
 }))
@@ -22,7 +22,7 @@ export default function Starfield() {
     <div className="starfield" ref={ref}>
       <div className="starfield-sky" aria-hidden="true" data-running={running}>
         {stars.map((star, i) => (
-          <span key={i} className="star" style={{
+          <span key={i} className={'star' + (i % 9 === 0 ? ' star-bright' : '')} style={{
             left: star.x + '%', top: star.y + '%',
             '--star-size': star.size + 'px',
             '--star-duration': star.duration + 's',
