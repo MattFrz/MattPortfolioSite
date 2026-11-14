@@ -448,9 +448,6 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .starfield { display: contents; }
 .starfield-sky { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; color: var(--ink); mask-image: linear-gradient(to right, #000, #000a 30%, #0008 50%, #000a 70%, #000); }
 .star { position: absolute; width: var(--star-size); height: var(--star-size); border-radius: 50%; background: currentColor; opacity: 0.85; }
-.starfield-toggle { position: fixed; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 30; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 24px; background: var(--bg-2); color: var(--ink-2); font-size: 12px; cursor: pointer; pointer-events: auto; }
-.starfield-toggle:hover { color: var(--ink); background: var(--bg-2); }
-.starfield-toggle svg { width: 12px; height: 12px; }
 @media (prefers-reduced-motion: no-preference) {
   .star { animation: star-drift var(--star-duration) ease-in-out var(--star-delay) infinite alternate; animation-play-state: paused; }
   .shooting-star { animation: meteor-pass 14s linear 2s infinite; animation-play-state: paused; }
@@ -469,7 +466,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .star-bright::before { width: 1px; height: 11px; }
 .star-bright::after { width: 11px; height: 1px; }
 
-@media print { .starfield-sky, .starfield-toggle { display: none; } }
+@media print { .starfield-sky { display: none; } }
 
 .shooting-star { position: absolute; top: 14%; left: 5%; width: 90px; height: 2px; opacity: 0; background: linear-gradient(to right, transparent, currentColor); border-radius: 50%; transform: rotate(35deg); }
 .shooting-star-second { top: 48%; left: 73%; width: 65px; }

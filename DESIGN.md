@@ -33,4 +33,4 @@ Use semantic headings, visible keyboard focus, descriptive image alt text, and l
 
 ## Homepage background
 
-A fixed monochrome starfield stays behind the homepage as visitors scroll, with lower contrast in the centre for text. Stars drift diagonally and brighten slowly, with occasional shooting stars. All motion pauses in hidden tabs; reduced motion keeps the stars static and hides shooting stars. A fixed pause control remains available in the bottom corner. Mobile shows fewer stars. This is decorative, without implying a personal astronomy interest.
+A fixed monochrome starfield stays behind the homepage as visitors scroll, with lower contrast in the centre for text. Stars drift diagonally and brighten slowly, with occasional shooting stars. All motion pauses in hidden tabs; reduced motion keeps the stars static and hides shooting stars. The background runs automatically without an on-page control. Mobile shows fewer stars. This is decorative, without implying a personal astronomy interest.

@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { FiPause, FiPlay } from 'react-icons/fi'
 import { usePageVisible, useReducedMotion } from '../hooks/useMotion'
 
 // Fixed positions keep the sky consistent across renders and theme changes.
@@ -15,8 +13,7 @@ const stars = Array.from({ length: 64 }, (_, i) => ({
 export default function Starfield() {
   const visible = usePageVisible()
   const reduced = useReducedMotion()
-  const [paused, setPaused] = useState(false)
-  const running = visible && !reduced && !paused
+  const running = visible && !reduced
 
   return (
     <div className="starfield">
@@ -33,13 +30,6 @@ export default function Starfield() {
         <span className="shooting-star" />
         <span className="shooting-star shooting-star-second" />
       </div>
-      {!reduced && (
-        <button className="starfield-toggle" onClick={() => setPaused(!paused)}
-          aria-label={paused ? 'Play star animation' : 'Pause star animation'} aria-pressed={paused}>
-          {paused ? <FiPlay aria-hidden="true" /> : <FiPause aria-hidden="true" />}
-          <span>Stars</span>
-        </button>
-      )}
     </div>
   )
 }
