@@ -93,14 +93,18 @@ function Role({ job }) {
     <Reveal as="li" className={'role' + (open ? ' is-open' : '')} id={job.id}>
       <p className="role-dates">{job.dates}</p>
       <div className="role-body">
-        <h3>{job.org}</h3>
-        <p className="role-title">{job.role}</p>
-        <p className="role-summary">{job.summary}</p>
-        <button className="role-toggle" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls={'d-' + job.id}>
-          {open ? 'Show less' : 'More details'}<FiChevronDown aria-hidden="true" />
-        </button>
-        <div className="role-detail" id={'d-' + job.id} inert={!open}>
-          <ul>{job.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
+        {/* Decorative: the company name sits right beside it. */}
+        {job.logo && <img className="role-logo" src={job.logo.src} width={job.logo.width} height={job.logo.height} alt="" loading="lazy" decoding="async" />}
+        <div className="role-main">
+          <h3>{job.org}</h3>
+          <p className="role-title">{job.role}</p>
+          <p className="role-summary">{job.summary}</p>
+          <button className="role-toggle" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls={'d-' + job.id}>
+            {open ? 'Show less' : 'More details'}<FiChevronDown aria-hidden="true" />
+          </button>
+          <div className="role-detail" id={'d-' + job.id} inert={!open}>
+            <ul>{job.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
+          </div>
         </div>
       </div>
     </Reveal>

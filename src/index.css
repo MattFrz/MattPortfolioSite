@@ -167,6 +167,9 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .role { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 8px 48px; padding: 40px 0; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
 .role:last-child { border-bottom: 1px solid var(--line); }
 .role-dates { font-size: 15px; color: var(--ink-3); padding-top: 8px; font-variant-numeric: tabular-nums; }
+.role-body { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 20px; align-items: start; }
+.role-logo { display: block; width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--bg-3); }
+.role-main { min-width: 0; }
 .role h3 { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; }
 .role-title { margin-top: 4px; color: var(--ink-2); }
 .role-summary { margin-top: 14px; max-width: 60ch; font-size: 19px; line-height: 1.42; letter-spacing: -0.022em; }
@@ -428,6 +431,8 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
   .number { min-height: 0; gap: 20px; padding: 28px; }
   .role { grid-template-columns: minmax(0, 1fr); padding: 32px 0; }
   .role-dates { padding-top: 0; }
+  .role-body { grid-template-columns: 44px minmax(0, 1fr); gap: 0 14px; }
+  .role-logo { width: 44px; height: 44px; border-radius: 10px; }
   .skills div, .fact-list div { grid-template-columns: 1fr; gap: 2px; }
   .trace { --label-w: 100%; border-radius: 22px; }
   .trace-head { padding: 18px 20px 12px; }

@@ -182,6 +182,7 @@ export const projects = [
 export const experience = [
   {
     id: 'upp',
+    logo: { src: '/images/logo-upp.webp', width: 112, height: 112 },
     org: 'University Pension Plan Ontario',
     role: 'Analyst Intern, Strategic Initiatives (Software Development)',
     dates: 'May 2026 to present',
@@ -197,6 +198,7 @@ export const experience = [
   },
   {
     id: 'after-image',
+    logo: { src: '/images/logo-after-image.webp', width: 100, height: 100 },
     org: 'After Image Inc',
     role: 'Co-Founder / Developer',
     dates: 'Jun 2025 to May 2026',
@@ -210,6 +212,7 @@ export const experience = [
   },
   {
     id: 'kd',
+    logo: { src: '/images/logo-kd-consulting.webp', width: 112, height: 112 },
     org: 'K&D Consulting',
     role: 'Data Engineer & Business Analyst',
     dates: 'May 2024 to Sep 2025',
