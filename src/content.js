@@ -5,13 +5,12 @@
 export const profile = {
   name: 'Matt Farzaneh',
   title: 'Software engineer',
-  summary: 'I build backend systems and then check that what they produce is right.',
+  summary: 'Computer science student at Western, from Toronto. Interested in software, markets, and AI.',
   location: 'Toronto, ON',
   email: 'mattfarzaneh21@gmail.com',
   github: 'https://github.com/MattFrz',
   linkedin: 'https://www.linkedin.com/in/matt-farzaneh-36153727a/',
   resume: '/resume.pdf',
-  resumeSize: '200 KB',
   headshot: {
     src: '/images/matt-farzaneh-headshot.webp', width: 240, height: 240,
     alt: 'Matt Farzaneh in a navy suit, light blue shirt and navy tie.',
@@ -122,7 +121,7 @@ export const projects = [
       },
       evidence: [
         'Zero mismatches across 3,774,380 checkpoints and 226,462,800 field comparisons against Databento mbp-10. AAPL, 2026-07-30, 14,270,119 events.',
-        '43.0M messages/s, 23.27 ns per message, zero allocations per message. In-memory replay on one pinned core of a Windows 11 desktop, best of five runs. This is host processing with the packet already in memory, not network-to-book latency.',
+        '43.0M messages/s, 23.27 ns per message, zero allocations per message. In-memory replay on one pinned core of a Windows 11 desktop, best of five runs. This is host processing with the packet already in memory, not network-to-book latency. Allocations are counted by replacing global operator new in the benchmark.',
         'Naive backtest +$378, realistic −$1,598 for the same signal on the same clock. Fees were $44 of the gap; queue position and latency were the rest. Passive fill rate was 37.3% against the naive 100%.',
         'Python/C++ boundary at 0.88 µs per event against a 20 µs target; batched replay at about 7.8M events/s.',
       ],
@@ -141,7 +140,7 @@ export const projects = [
     date: 'Aug 2026',
     team: 'Team of four: Nalin, Zain, Cecile, and me',
     role: 'Data, backtester, risk engine, job runner, and C++',
-    summary: 'An investment research app that turns a plain-English thesis into source-linked research, then runs it through a quantitative engine that is allowed to reject it.',
+    summary: 'An investment research app that turns a plain-English thesis into source-linked research, then evaluates stock ideas with historical backtests and risk analysis.',
     built: [
       'Event-driven backtester with commissions, volume-based slippage, and position limits',
       'Background job runner with progress streaming and a versioned result cache',
@@ -151,7 +150,7 @@ export const projects = [
     code: 'https://github.com/MattFrz/AI-Quant-Council-Ignition-Hacks-V7-',
     live: 'https://ai-quant-council.vercel.app/',
     detail: {
-      problem: 'Ask a chatbot whether a stock is a good buy and it may give you a Sharpe ratio it made up. We wanted the language model to suggest ideas and leave the numbers to a backtest that can reject them.',
+      problem: 'Researching an investment thesis means connecting company filings, market data, and portfolio performance. We built a workflow that brings those steps together, from a plain-English idea to a historical backtest.',
       product: 'You type a thesis in plain English. Seven agents break it into measurable criteria, retrieve SEC filings, extract catalysts with quotes and source links, and argue both sides. The candidate ideas then go through a backtest and risk checks that can reject them.',
       teamNote: 'Zain built retrieval and the agents, including the FAISS index with a hard filed-date filter so a backtest can’t read a filing that didn’t exist yet. Nalin built the factor and alpha models. Cecile built portfolio construction and the product surface.',
       mine: [
@@ -238,7 +237,7 @@ export const quantFlow = [
   { title: 'Progress stream', detail: 'Frontend reads events as they land' },
 ]
 
-// Live trace replays for the hero. Synthetic: the timings and job numbers are
+// Job trace replays for the Urbanova write-up. Synthetic: timings and job numbers are
 // illustrative, the sequence follows Urbanova's real job protocol.
 // Services: api, pg (PostgreSQL), worker, check (validation).
 export const traceServices = {
@@ -300,58 +299,55 @@ export const liveTraces = [
   },
 ]
 
-// Apple-style home page copy.
+// Homepage copy.
 export const home = {
-  intro: 'Software engineer in Toronto. I study computer science at Western.',
-  statement: 'I like work where you can check the answer. My order book matched Databento’s at all 3.77 million checkpoints in a day of AAPL trading.¹ My Urbanova job queue recovers when a worker stalls mid-run, and code checks Gemini’s numbers and citations before anything is saved.',
+  intro: 'I’m a computer science student at Western, from Toronto. I’m interested in software, markets, and AI. I’ve built an order book engine, worked on investment research tools, and teamed up with friends to simulate Toronto transit.',
   chapters: {
     urbanova: {
       headline: 'Urbanova',
       lede: 'A simulation of nine stops on Toronto’s 505 Dundas streetcar, showing how new housing could change crowding and waits.',
-      credit: 'Hack the Valley 11, October 2026. Team of four. I built the backend and the AI testing loop.',
+      credit: 'Built with three friends at Hack the Valley 11. My part: the backend and AI assumption-testing system.',
+      details: [
+        'The job queue recovers interrupted runs using worker leases and revision checks.',
+        'Assumption tests compare low and high values on matched random seeds. This is an exploratory prototype, not a calibrated TTC forecast.',
+      ],
       shot: {
         src: '/images/urbanova-demo.webp', width: 1920, height: 1200,
         alt: 'Urbanova live demo: a map of downtown Toronto with the 505 Dundas streetcar line in red from Yonge Street to Broadview Avenue, stop markers along it, and a replay bar at 07:12 playing a saved run.',
-        caption: 'The live demo replaying a saved run with one new development on the corridor. The map and replay are my teammates’ work. The runs it loads come through the API and job queue I built.',
+        caption: 'A saved scenario with one new development. Map and replay by my teammates; backend by me.',
       },
     },
     'itch-engine': {
       headline: 'ITCH Engine',
       lede: 'A C++ parser and order book for Nasdaq’s ITCH feed, tested against Databento’s book on a full day of AAPL messages.',
-      credit: 'Personal project, August 2026. I built all of it.',
+      credit: 'Solo project. I built the parser, order books, validation, and backtester.',
+      details: [
+        'Zero mismatches against Databento’s 10-level book across 3,774,380 checkpoints. AAPL, July 30, 2026: one symbol, one trading day.',
+        'The same signal returned +$378 with naive fills and −$1,598 with queue position, latency, and fees. Historical backtests, not live returns.',
+      ],
       shot: {
-        src: '/images/itch-engine-demo.webp', width: 2000, height: 1823, maxWidth: 860,
+        src: '/images/itch-engine-demo.webp', width: 2000, height: 1823, maxWidth: 600,
         alt: 'ITCH Engine viewer: a naive backtest of +$79 against a realistic engine result of −$89, summary tiles for fill rate, queue and fees, and an equity chart where the naive line ends above zero and the realistic line ends below it.',
-        caption: 'The deployed viewer, which only reads the engine’s output files. It runs on a synthetic day because licensed market data isn’t redistributed, so its numbers are not the AAPL results in the footnotes.',
+        caption: 'The deployed viewer, which only reads the engine’s output files. It runs on a synthetic day because licensed market data isn’t redistributed, so its numbers differ from the actual AAPL market-data results above.',
       },
     },
     'ai-quant-council': {
       headline: 'AI Quant Council',
-      lede: 'A hackathon research app. Language models read SEC filings and pitch stock ideas, then my backtester and risk engine test them.',
-      credit: 'IgnitionHacks V7, August 2026. Team of four. I built the data pipeline, backtester, risk engine and job runner.',
+      lede: 'An investment research app that turns a thesis into source-linked research, stock ideas, and a historical backtest.',
+      credit: 'Team of four at IgnitionHacks V7. My part: data pipeline, backtester, risk engine, and job runner.',
+      details: [
+        'The backtester models commissions, volume-based slippage, and position limits for seven-stock portfolios from a 499-stock universe.',
+        'Research jobs stream progress while they run. The example results cover one in-sample historical window, not live returns or a walk-forward test.',
+      ],
       shot: {
-        src: '/images/ai-quant-council-demo.webp', width: 1536, height: 1868, maxWidth: 640,
+        src: '/images/ai-quant-council-demo.webp', width: 1536, height: 1868, maxWidth: 520,
         alt: 'AI Quant Council quantitative validation panel: a strategy equity curve against the SPY benchmark from August 2021 to August 2026, a drawdown chart, and backtest statistics including costs charged and the test window.',
         caption: 'The live app’s example thesis after a run. These results come from my backtester. As the panel says, it is one in-sample window, not a walk-forward test.',
       },
     },
   },
-  numbers: [
-    { value: 0, decimals: 0, suffix: '', label: 'heap allocations per message in the replay benchmark', note: 3 },
-    { value: 229, decimals: 0, suffix: '', label: 'passing tests in the AI Quant Council suite', note: 4 },
-    { value: 95, decimals: 0, suffix: '%', label: 'less manual Excel work at K&D Consulting', note: 5 },
-    { value: 40, decimals: 0, suffix: '+', label: 'hours of reporting saved each week at K&D', note: 6 },
-  ],
-  footnotes: [
-    'ITCH Engine. Compared against Databento’s 10-level mbp-10 book at every one of 3,774,380 points where the book changed, 226,462,800 field comparisons in total. AAPL, one trading session (14,270,119 events).',
-    'ITCH Engine. 43.0 million messages per second, or 23.27 ns per message, on in-memory replay with one pinned core on a Windows 11 desktop, best of five runs. This is host processing with the packet already in memory, not network latency.',
-    'ITCH Engine. Measured by replacing the global operator new in the benchmark, so any allocation would be counted.',
-    'AI Quant Council. 233 tests in the team’s suite: 229 pass and 4 are skipped. Runs in about 8 minutes with no network access.',
-    'K&D Consulting. Reduction in manual Excel processing from a Python automation framework driven by YAML configs, as reported on my resume.',
-    'K&D Consulting. Across more than 500 financial workbook integrations a month, as reported on my resume.',
-  ],
   about: [
-    'I lift, mostly strength training, and I’ve shared some of it online. I’d rather fix my technique than add reps. Before lifting I swam competitively at the Eastern Canadian level.',
-    'I also do hackathons with friends. Urbanova and AI Quant Council each came out of one.',
+    'Outside of software, I spend a lot of time in the gym. I used to compete in swimming at the Eastern Canadian level, and now I’m focused on strength training.',
+    'I also enjoy hackathons for the building and the people. Urbanova and AI Quant Council both started at one with friends.',
   ],
 }

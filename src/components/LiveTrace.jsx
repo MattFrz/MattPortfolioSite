@@ -9,7 +9,7 @@ const HOLD_MS = 2200 // pause on the finished trace before the next one
 
 // One CSS custom property (--t) drives every bar, event and label, so a frame
 // costs a single style write.
-export default function LiveTrace({ traces, compact = false, label = 'Live trace' }) {
+export default function LiveTrace({ traces, compact = false, label = 'Illustrative job trace' }) {
   const reduced = useReducedMotion()
   const pageVisible = usePageVisible()
   const [viewRef, inView] = useInView({ threshold: 0.15 })
@@ -51,7 +51,7 @@ export default function LiveTrace({ traces, compact = false, label = 'Live trace
           <span className={'live-dot' + (running ? ' is-live' : '')} aria-hidden="true" />
           <span className="trace-title">{trace.title}</span>
           <span className="trace-meta">trace {trace.id} · {trace.note}</span>
-          <span className="trace-tag">replay · illustrative timings</span>
+          <span className="trace-tag">Illustrative replay · not live telemetry</span>
         </div>
         <div className="trace-controls">
           <span className="trace-switch" role="group" aria-label="Choose trace">

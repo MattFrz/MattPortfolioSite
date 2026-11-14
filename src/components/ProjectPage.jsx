@@ -6,7 +6,7 @@ import { External, SectionHeading } from './Sheet'
 import { BarFigure, FlowFigure, PhotoGallery, StageTrace } from './Figures'
 
 function ArchitectureFigure({ project }) {
-  if (project.slug === 'urbanova') return <LiveTrace traces={liveTraces} compact label="Live trace replay of the Urbanova job pipeline" />
+  if (project.slug === 'urbanova') return <LiveTrace traces={liveTraces} compact label="Illustrative replay of the Urbanova job pipeline" />
   if (project.slug === 'ai-quant-council') {
     return <FlowFigure caption="Running a 60 to 90 second research job outside the HTTP request." steps={quantFlow}
       returnPath="Finished runs go to a disk cache tagged with a cache version. Entries from an older version are recomputed, not replayed." />

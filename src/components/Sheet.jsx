@@ -8,7 +8,6 @@ import { Link } from './Link'
 
 const nav = [
   ['/#work', 'Work'],
-  ['/#numbers', 'Measurements'],
   ['/#experience', 'Experience'],
   ['/#about', 'About'],
   ['/#contact', 'Contact'],

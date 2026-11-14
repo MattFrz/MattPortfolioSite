@@ -1,7 +1,5 @@
 # Product
 
-<!-- impeccable:product-schema 1 -->
-
 ## Platform
 
 web
@@ -26,7 +24,7 @@ Success: a recruiter or engineer opens a project's code or demo, downloads the r
 
 ## Positioning
 
-Matt is positioned as a software engineer first. Finance is one domain he builds in, not the whole identity. What distinguishes the work is that it checks whether its own outputs are correct: an order book validated against the venue's reference book, simulation jobs that recover from interruption and reject stale results, AI outputs validated in code with deterministic fallbacks, and retrieval that cannot read documents from the future.
+Introduce Matt as a computer science student at Western, from Toronto, with interests in software, markets, trading systems, and AI. Let visitors connect with him before presenting technical evidence. Put validation results, recovery behavior, and backtesting details alongside the relevant projects and in their write-ups.
 
 ## Operating Context
 
@@ -36,7 +34,7 @@ Matt is positioned as a software engineer first. Finance is one domain he builds
 
 ## Capabilities and Constraints
 
-- Existing React 19 + Vite single-page site deployed on Vercel (https://matt-portfolio-site-tau.vercel.app).
+- Existing React 19 + Vite single-page site deployed on Vercel (https://mattportfoliositetau.vercel.app).
 - Featured projects: Urbanova (Hack the Valley 11, Oct 2026, team of four), Nasdaq ITCH Market Data Engine (solo, Aug 2026), AI Quant Council (IgnitionHacks V7, Aug 2026, team of four).
 - Experience: University Pension Plan Ontario (Analyst Intern, Strategic Initiatives (Software Development), May 2026 to present); After Image Inc (Co-Founder / Developer, Jun 2025 to May 2026); K&D Consulting (Data Engineer & Business Analyst, May 2024 to Sep 2025).
 - Concise homepage summaries with deeper project pages; not a resume dump.
@@ -45,8 +43,8 @@ Matt is positioned as a software engineer first. Finance is one domain he builds
 ## Brand Commitments
 
 Voice: direct, natural, short, confident, specific. Honest tradeoffs and limitations. A little personality.
-Banned: obvious AI prose, excessive em dashes, dramatic storytelling, "passionate developer", inflated or buzzword copy, "Leveraged X to empower Y" constructions, forced inspirational endings.
-No visual theme has been chosen by the user; no palette or aesthetic is binding.
+Banned: obvious AI prose, em dashes, dramatic storytelling, "passionate developer", inflated or buzzword copy, "Leveraged X to empower Y" constructions, forced inspirational endings.
+Preserve the clean monochrome direction, strong typography, and restrained blue links. See DESIGN.md.
 
 ## Evidence on Hand
 
@@ -58,7 +56,7 @@ No visual theme has been chosen by the user; no palette or aesthetic is binding.
 
 ## Product Principles
 
-1. Lead with what Matt built and how he knows it works.
+1. Lead with who Matt is and what interests him, then show what he built.
 2. Keep team work and personal contribution visibly separate.
 3. Every metric keeps its conditions attached (in-memory, backtest, observed).
 4. Make code and demo links impossible to miss and clearly labelled.
