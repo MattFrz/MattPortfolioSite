@@ -479,3 +479,25 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
   10% { opacity: 0; transform: translate3d(240px, 168px, 0) rotate(35deg); }
   100% { opacity: 0; transform: translate3d(240px, 168px, 0) rotate(35deg); }
 }
+
+/* Small connected star groups stay at the edges of the reading area. */
+.constellation { position: absolute; width: clamp(100px, 12vw, 170px); height: auto; opacity: 0.65; }
+.constellation polyline { fill: none; stroke: currentColor; stroke-width: 0.7; stroke-opacity: 0.4; }
+.constellation circle { fill: currentColor; }
+.constellation-0 { left: 2%; top: 19%; }
+.constellation-1 { right: 2%; top: 53%; }
+.constellation-2 { left: 6%; bottom: 9%; }
+@media (prefers-reduced-motion: no-preference) {
+  .constellation { animation: constellation-shimmer 9s ease-in-out infinite alternate; animation-play-state: paused; }
+  .constellation-1 { animation-delay: -4s; }
+  .constellation-2 { animation-delay: -7s; }
+  .starfield-sky[data-running='true'] .constellation { animation-play-state: running; }
+}
+@keyframes constellation-shimmer {
+  from { opacity: 0.4; transform: translateY(0); }
+  to { opacity: 0.85; transform: translateY(-10px); }
+}
+@media (max-width: 760px) {
+  .constellation { width: 90px; }
+  .constellation-2 { display: none; }
+}

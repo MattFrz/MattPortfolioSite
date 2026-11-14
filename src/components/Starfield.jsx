@@ -12,6 +12,13 @@ const stars = Array.from({ length: 64 }, (_, i) => ({
   delay: -(i % 11),
 }))
 
+// Decorative patterns, rather than a geographically accurate sky map.
+const constellations = [
+  [[15, 40], [42, 24], [65, 43], [95, 27], [123, 51]],
+  [[18, 22], [48, 36], [75, 62], [119, 54], [106, 91], [66, 94], [75, 62]],
+  [[22, 78], [46, 45], [74, 56], [99, 22], [122, 48]],
+]
+
 export default function Starfield() {
   const visible = usePageVisible()
   const reduced = useReducedMotion()
@@ -21,6 +28,13 @@ export default function Starfield() {
   return (
     <div className="starfield">
       <div className="starfield-sky" aria-hidden="true" data-running={running}>
+        {constellations.map((points, i) => (
+          <svg key={i} className={'constellation constellation-' + i}
+            viewBox="0 0 140 120" focusable="false">
+            <polyline points={points.map((point) => point.join(',')).join(' ')} />
+            {points.map(([x, y], j) => <circle key={j} cx={x} cy={y} r={j % 3 === 0 ? 2.5 : 1.8} />)}
+          </svg>
+        ))}
         {stars.map((star, i) => (
           <span key={i} className={'star' + (i % 9 === 0 ? ' star-bright' : '')} style={{
             left: star.x + '%', top: star.y + '%',
