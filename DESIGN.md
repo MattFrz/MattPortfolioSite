@@ -35,4 +35,4 @@ Use semantic headings, visible keyboard focus, descriptive image alt text, and l
 
 A fixed monochrome starfield stays behind the homepage as visitors scroll, with lower contrast in the centre for text. Stars drift diagonally and brighten slowly, with occasional shooting stars. All motion pauses in hidden tabs; reduced motion keeps the stars static and hides shooting stars. A fixed pause control remains available in the bottom corner. Mobile shows fewer stars. This is decorative, without implying a personal astronomy interest.
 
-Three small decorative constellation patterns sit at the edges with faint lines and a slow shimmer. Mobile shows two. Their animation follows the same pause and reduced-motion controls as the stars.
+Six small decorative constellation groups are scattered across the viewport, including the centre, with varied sizes, angles, faint lines, and a slow shimmer. Mobile shows four smaller groups. Their animation follows the same pause and reduced-motion controls as the stars.
