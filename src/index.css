@@ -12,7 +12,7 @@ ul, ol { padding: 0; }
   --mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --ease: cubic-bezier(0.28, 0.11, 0.32, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --wide: 1120px;
+  --wide: 1040px;
   --text: 980px;
   --article: 720px;
   --gutter: clamp(20px, 5vw, 48px);
@@ -108,8 +108,8 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .more svg { width: 0.85em; height: 0.85em; margin-top: 0.08em; transition: transform 220ms var(--ease); }
 .more:hover { text-decoration: underline; text-underline-offset: 0.18em; }
 .more:hover svg { transform: translateX(3px); }
-.section-title { text-align: center; font-size: clamp(40px, 5.6vw, 64px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; margin-bottom: clamp(40px, 5vw, 64px); scroll-margin-top: 80px; }
-.band { max-width: var(--wide); margin-inline: auto; padding: clamp(96px, 12vw, 160px) var(--gutter) 0; }
+.section-title { text-align: center; font-size: clamp(34px, 3.6vw, 48px); line-height: 1.06; font-weight: 700; letter-spacing: -0.035em; margin-bottom: clamp(40px, 5vw, 64px); scroll-margin-top: 80px; }
+.band { max-width: var(--wide); margin-inline: auto; padding: clamp(72px, 8vw, 120px) var(--gutter) 0; }
 
 /* Elements rise into place once, the first time they scroll into view. */
 @media (prefers-reduced-motion: no-preference) {
@@ -122,10 +122,10 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 @keyframes fade-in { from { opacity: 0; } }
 
 /* ---------- Hero ---------- */
-.hero { max-width: var(--text); margin-inline: auto; padding: clamp(96px, 16vh, 180px) var(--gutter) clamp(72px, 10vh, 120px); text-align: center; }
-.hero h1 { font-size: clamp(56px, 10vw, 120px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; outline: none; }
-.hero-intro { margin: 24px auto 0; max-width: 30ch; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.25; font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); text-wrap: balance; }
-.hero-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; margin-top: 28px; font-size: clamp(17px, 1.6vw, 21px); }
+.hero { max-width: var(--text); margin-inline: auto; padding: clamp(80px, 14vh, 150px) var(--gutter) clamp(64px, 9vh, 100px); text-align: center; }
+.hero h1 { font-size: clamp(48px, 6.2vw, 88px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; outline: none; }
+.hero-intro { margin: 24px auto 0; max-width: 30ch; font-size: clamp(19px, 1.6vw, 24px); line-height: 1.25; font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); text-wrap: balance; }
+.hero-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; margin-top: 28px; font-size: clamp(17px, 1.3vw, 19px); }
 @media (prefers-reduced-motion: no-preference) {
   .hero h1 { animation: hero-in 1.4s var(--ease) both; }
   .hero-intro { animation: hero-in 1.4s var(--ease) 0.15s both; }
@@ -136,16 +136,16 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 /* ---------- Statement: words light up with scroll ---------- */
 .statement { --p: 1; height: 240vh; position: relative; }
 .statement-sticky { position: sticky; top: 0; height: 100vh; display: grid; place-items: center; padding: 0 var(--gutter); }
-.statement p { max-width: 980px; font-size: clamp(30px, 4.4vw, 60px); line-height: 1.12; font-weight: 650; letter-spacing: -0.035em; text-wrap: pretty; }
+.statement p { max-width: 860px; font-size: clamp(26px, 3vw, 44px); line-height: 1.12; font-weight: 650; letter-spacing: -0.035em; text-wrap: pretty; }
 .statement span { opacity: clamp(0.18, calc(var(--p) * (var(--n) + 6) - var(--i) - 2), 1); transition: opacity 120ms linear; }
 @media (prefers-reduced-motion: reduce) { .statement { height: auto; padding: 120px 0; } .statement-sticky { position: static; height: auto; } .statement span { opacity: 1; } }
 
 /* ---------- Project chapters ---------- */
 .chapters { scroll-margin-top: 48px; }
-.chapter { padding: clamp(96px, 12vw, 160px) var(--gutter) 0; }
+.chapter { padding: clamp(72px, 8vw, 120px) var(--gutter) 0; }
 .chapter-head { max-width: var(--text); margin-inline: auto; text-align: center; }
-.chapter h2 { font-size: clamp(48px, 8vw, 96px); line-height: 1.02; font-weight: 700; letter-spacing: -0.04em; }
-.chapter-lede { margin: 16px auto 0; max-width: 28ch; font-size: clamp(21px, 2.6vw, 32px); line-height: 1.2; font-weight: 600; letter-spacing: -0.03em; color: var(--ink-2); text-wrap: balance; }
+.chapter h2 { font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 700; letter-spacing: -0.04em; }
+.chapter-lede { margin: 16px auto 0; max-width: 28ch; font-size: clamp(19px, 1.7vw, 24px); line-height: 1.25; font-weight: 600; letter-spacing: -0.03em; color: var(--ink-2); text-wrap: balance; }
 .chapter-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 32px; margin-top: 24px; font-size: clamp(17px, 1.6vw, 19px); }
 .showcase { --p: 1; max-width: var(--wide); margin: clamp(48px, 6vw, 72px) auto 0; transform-origin: 50% 0; }
 @media (prefers-reduced-motion: no-preference) {
@@ -155,8 +155,8 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 
 /* ---------- Numbers ---------- */
 .numbers { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: var(--text); margin-inline: auto; }
-.number { display: grid; align-content: space-between; gap: 40px; min-height: 260px; padding: 36px 32px; background: var(--bg-2); border-radius: var(--tile-radius); }
-.number-value { font-size: clamp(56px, 6vw, 80px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.number { display: grid; align-content: space-between; gap: 40px; min-height: 210px; padding: 30px 28px; background: var(--bg-2); border-radius: var(--tile-radius); }
+.number-value { font-size: clamp(44px, 4.2vw, 60px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
 .number-label { font-size: 19px; line-height: 1.3; font-weight: 600; letter-spacing: -0.022em; color: var(--ink-2); max-width: 24ch; }
 .number-label sup { font-size: 0.6em; line-height: 0; margin-left: 2px; }
 .number-label sup a { color: var(--ink-2); }
@@ -170,7 +170,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .role-body { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 20px; align-items: start; }
 .role-logo { display: block; width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background: var(--bg-3); }
 .role-main { min-width: 0; }
-.role h3 { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; }
+.role h3 { font-size: clamp(22px, 1.9vw, 26px); line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; }
 .role-title { margin-top: 4px; color: var(--ink-2); }
 .role-summary { margin-top: 14px; max-width: 60ch; font-size: 19px; line-height: 1.42; letter-spacing: -0.022em; }
 .role-toggle { display: inline-flex; align-items: center; gap: 4px; margin-top: 14px; padding: 0; background: none; border: 0; color: var(--link); cursor: pointer; font-size: 17px; }
@@ -185,7 +185,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .role-detail li::before { content: ''; position: absolute; left: 2px; top: 0.66em; width: 5px; height: 5px; border-radius: 50%; background: var(--ink-3); }
 
 /* ---------- About ---------- */
-.about-body { max-width: var(--article); margin-inline: auto; display: grid; gap: 20px; font-size: clamp(19px, 2vw, 24px); line-height: 1.38; font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); }
+.about-body { max-width: var(--article); margin-inline: auto; display: grid; gap: 20px; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.4; font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); }
 .about-body p:first-child { color: var(--ink); }
 .skills { max-width: var(--article); margin: 56px auto 0; display: grid; border-top: 1px solid var(--line); }
 .skills div { display: grid; grid-template-columns: 9rem 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -196,8 +196,8 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .contact { text-align: center; padding-bottom: clamp(96px, 12vw, 160px); }
 .contact-photo { margin: 0 auto 32px; width: clamp(88px, 10vw, 112px); }
 .contact-photo img { display: block; width: 100%; height: auto; border-radius: 50%; background: var(--bg-3); }
-.contact-title { font-size: clamp(56px, 9vw, 112px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; scroll-margin-top: 80px; }
-.contact-email { margin-top: 28px; font-size: clamp(22px, 3vw, 36px); font-weight: 600; letter-spacing: -0.03em; overflow-wrap: anywhere; }
+.contact-title { font-size: clamp(44px, 5.6vw, 80px); line-height: 1; font-weight: 700; letter-spacing: -0.04em; scroll-margin-top: 80px; }
+.contact-email { margin-top: 28px; font-size: clamp(20px, 2.2vw, 28px); font-weight: 600; letter-spacing: -0.03em; overflow-wrap: anywhere; }
 .contact-email a { color: var(--link); }
 .contact-email a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
 .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 32px; margin-top: 24px; font-size: 19px; }
@@ -312,7 +312,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .stage-row:nth-child(2) { --c: color-mix(in srgb, var(--link) 70%, var(--bg-2)); }
 .stage-row:nth-child(1) { --c: color-mix(in srgb, var(--link) 45%, var(--bg-2)); }
 .stage-dur { text-align: right; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--ink-2); }
-.stage-total { margin-top: 24px; font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.035em; }
+.stage-total { margin-top: 24px; font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; letter-spacing: -0.035em; }
 .bars { width: 100%; border-collapse: collapse; table-layout: fixed; }
 .bars th { text-align: left; font-weight: 500; padding: 12px 18px 12px 0; width: 34%; }
 .bars td { padding: 12px 0; }
@@ -346,9 +346,9 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--link); font-size: 17px; }
 .back-link:hover { text-decoration: underline; }
 .back-link svg { width: 15px; height: 15px; }
-.project-hero h1 { margin-top: 28px; font-size: clamp(48px, 7vw, 80px); line-height: 1.02; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance; outline: none; }
+.project-hero h1 { margin-top: 28px; font-size: clamp(40px, 4.8vw, 64px); line-height: 1.02; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance; outline: none; }
 .work-meta { margin-top: 12px; font-size: 15px; color: var(--ink-3); }
-.hero-sub { margin-top: 24px; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.25; font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); text-wrap: pretty; }
+.hero-sub { margin-top: 24px; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.3; font-weight: 500; letter-spacing: -0.025em; color: var(--ink-2); text-wrap: pretty; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; border-radius: 980px; border: 1px solid var(--link); color: var(--link); font-size: 17px; font-weight: 500; transition: background-color 200ms var(--ease), color 200ms var(--ease); }
 .btn svg { width: 16px; height: 16px; }
@@ -367,7 +367,7 @@ button { font: inherit; color: inherit; letter-spacing: inherit; }
 .doc-rail { display: none; }
 .doc-body > section { margin-top: clamp(64px, 8vw, 96px); }
 .section-head { margin-bottom: 20px; }
-.section-head h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.1; font-weight: 700; letter-spacing: -0.035em; scroll-margin-top: 64px; }
+.section-head h2 { font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; font-weight: 700; letter-spacing: -0.035em; scroll-margin-top: 64px; }
 .section-aside { margin-top: 8px; color: var(--ink-2); }
 .prose { font-size: 19px; line-height: 1.5; letter-spacing: -0.022em; text-wrap: pretty; }
 .prose + .prose { margin-top: 1em; }
