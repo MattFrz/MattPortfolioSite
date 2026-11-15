@@ -10,6 +10,7 @@ export const profile = {
   email: 'mattfarzaneh21@gmail.com',
   github: 'https://github.com/MattFrz',
   linkedin: 'https://www.linkedin.com/in/matt-farzaneh-36153727a/',
+  devpost: 'https://devpost.com/MattFrz',
   resume: '/resume.pdf',
   headshot: {
     src: '/images/matt-farzaneh-headshot.webp', width: 240, height: 240,

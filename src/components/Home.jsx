@@ -120,6 +120,7 @@ export default function Home() {
           <More href={profile.resume} download="Matt-Farzaneh-Resume.pdf">Résumé (PDF)</More>
           <More href={profile.github} external>GitHub</More>
           <More href={profile.linkedin} external>LinkedIn</More>
+          <More href={profile.devpost} external>Devpost</More>
         </Reveal>
       </section>
 
